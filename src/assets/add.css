@@ -1,0 +1,54 @@
+.background {
+  background: #f8f9fe;
+  position: absolute;
+  width: 1920px;
+  height: 814px;
+  left: 0px;
+  top: 86px;
+}
+@media (min-width: 320px) {
+  .navbarText {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137.19%;
+    font-variant: small-caps;
+    color: #ffffff;
+  }
+
+  .navbarText.active {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137.19%;
+    font-variant: small-caps;
+    color: #ffffff;
+  }
+}
+
+@media (min-width: 640px) {
+}
+
+@media (min-width: 760px) {
+  .navbarText {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137.19%;
+    font-variant: small-caps;
+    color: #aeaeae;
+  }
+
+  .navbarText.active {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 137.19%;
+    font-variant: small-caps;
+    color: #7e7bff;
+  }
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
+}
+@media (min-width: 1920px) {
+}
