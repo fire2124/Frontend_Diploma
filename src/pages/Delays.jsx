@@ -3,6 +3,8 @@ import { matchPath } from "react-router";
 
 
 class Delays extends Component {
+ 
+
   render() {
     const isNews = !!matchPath(
       this.props.location.pathname, 

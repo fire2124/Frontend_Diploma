@@ -1,0 +1,38 @@
+[
+  {
+    "category": "anti-social-behaviour",
+    "location_type": "Force",
+    "location": {
+      "latitude": "52.629292",
+      "street": {
+        "id": 883212,
+        "name": "On or near Severn Street"
+      },
+      "longitude": "-1.117842"
+    },
+    "context": "",
+    "outcome_status": null,
+    "persistent_id": "",
+    "id": 78217318,
+    "location_subtype": "",
+    "month": "2019-10"
+  },
+  {
+    "category": "anti-social-behaviour",
+    "location_type": "Force",
+    "location": {
+      "latitude": "52.625201",
+      "street": {
+        "id": 882420,
+        "name": "On or near St James Road"
+      },
+      "longitude": "-1.114231"
+    },
+    "context": "",
+    "outcome_status": null,
+    "persistent_id": "",
+    "id": 78217324,
+    "location_subtype": "",
+    "month": "2019-10"
+  }
+]
