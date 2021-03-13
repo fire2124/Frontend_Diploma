@@ -40,9 +40,10 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar />
+        
         <main>
           <BrowserRouter>
+          <NavBar />
             <Route path="/" component={News} />
             <Route path="/delays" component={Delays} />
             <Route

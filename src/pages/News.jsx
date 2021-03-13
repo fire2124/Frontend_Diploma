@@ -1,27 +1,59 @@
 import React, { Component } from "react";
-import {
-  getPresovStreets,
-  getMhdStops,
-  getSadStops,
-  getTrainStops,
-} from "../services/staticDataService";
+import { getMhdPoBusses, getSadPoBusses, getTrains, getTraffic } from "../services/liveDataService";
+import { getMhdStops, getSadStops, getTrainStops } from "../services/staticDataServices";
 
 import MyMap from "../components/map";
 import "leaflet/dist/leaflet.css";
 
 class News extends Component {
   handleDownload = async () => {
-    await getPresovStreets().then((res) => {
-      console.log(res);
-    });
+
     await getMhdStops().then((res) => {
       console.log(res);
     });
+
     await getSadStops().then((res) => {
       console.log(res);
     });
+
     await getTrainStops().then((res) => {
       console.log(res);
+    });
+
+    await getMhdPoBusses().then((res) => {
+      console.log(res);
+      setInterval(async function () {
+        await getMhdPoBusses().then((res2) => {
+          console.log(res2);
+        })
+      }, 15000)
+    });
+
+    await getSadPoBusses().then((res) => {
+      console.log(res);
+      setInterval(async function () {
+        await getSadPoBusses().then((res2) => {
+          console.log(res2);
+        })
+      }, 15000)
+    });
+
+    await getTrains().then((res) => {
+      console.log(res);
+      setInterval(async function () {
+        await getTrains().then((res2) => {
+          console.log(res2);
+        })
+      }, 15000)
+    });
+
+    await getTraffic().then((res) => {
+      console.log(res);
+      setInterval(async function () {
+        await getTraffic().then((res2) => {
+          console.log(res2);
+        })
+      }, 900000)
     });
   };
 
@@ -39,9 +71,9 @@ class News extends Component {
           >
             Download
           </button>
-          <div className="map my-2">
+          {/* <div className="map my-2">
             <MyMap />
-          </div>
+          </div> */}
         </div>
       </div>
     );

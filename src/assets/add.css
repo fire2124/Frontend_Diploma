@@ -1,8 +1,8 @@
 .background {
   background: #f8f9fe;
   position: absolute;
-  width: 1920px;
-  height: 814px;
+  width: 1900px;
+  height: 1000px;
   left: 0px;
   top: 86px;
 }
@@ -90,6 +90,15 @@
 }
 
 @media (min-width: 1280px) {
+ 
 }
 @media (min-width: 1920px) {
+  .background {
+    background: #f8f9fe;
+    position: absolute;
+    width: 1900px;
+    height: 1000px;
+    left: 0px;
+    top: 86px;
+  }
 }
