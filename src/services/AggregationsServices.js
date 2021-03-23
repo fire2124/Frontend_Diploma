@@ -35,7 +35,7 @@ export async function getTraffic_queries(time_interval) {
     );
     console.log(response)
     if (response.status === 200) {
-      return response.data;
+      return response;
     }
   } catch (error) {
     console.log(error);

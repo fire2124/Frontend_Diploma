@@ -6,7 +6,7 @@ const apiEndpoint = apiUrl;
 export async function getMhdStops() {
   try {
     let response = await http.get(`${apiEndpoint}/MhdStops`);
-    if (response.data.succeeded) {
+    if (response.status === 200) {
       return response.data;
     }
   } catch (error) {
@@ -17,7 +17,7 @@ export async function getMhdStops() {
 export async function getSadStops() {
   try {
     let response = await http.get(`${apiEndpoint}/SadStops`);
-    if (response.data.succeeded) {
+    if (response.status === 200) {
       return response.data;
     }
   } catch (error) {
@@ -28,7 +28,7 @@ export async function getSadStops() {
 export async function getTrainStops() {
   try {
     let response = await http.get(`${apiEndpoint}/TrainStops`);
-    if (response.data.succeeded) {
+    if (response.status === 200) {
       return response.data;
     }
   } catch (error) {

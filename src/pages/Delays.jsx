@@ -30,6 +30,7 @@ class Delays extends Component {
 
   handleDownload_Change_of_delay = async () => {
     try {
+      
       let res15min = await getChange_of_delay("MHD", '15min')
       let res1hour = await getChange_of_delay("MHD", '1hour')
       let res3hours = await getChange_of_delay("MHD", '3hours')

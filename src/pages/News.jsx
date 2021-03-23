@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { matchPath } from "react-router";
 import { getMhdPoBusses, getSadPoBusses, getTrains, getTraffic } from "../services/liveDataService";
 import { getMhdStops, getSadStops, getTrainStops } from "../services/staticDataServices";
-
 import MyMap from "../components/map";
 import "leaflet/dist/leaflet.css";
+let isNews;
 
 class News extends Component {
   handleDownload = async () => {
