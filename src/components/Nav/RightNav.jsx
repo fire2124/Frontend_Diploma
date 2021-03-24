@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Ul = styled.ul`
-
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #7e7bff;

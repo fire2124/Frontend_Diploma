@@ -13,20 +13,20 @@ import NavBar from "./components/Nav/Navbar";
 import "./App.css";
 import "./assets/add.css";
 import "./assets/main.css";
-import { GlobalStyle } from "./GlobalStyles"
+import { GlobalStyle } from "./GlobalStyles";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDjxpW0xPHPlh-MV4BxoJ6LH3hnJMo9Edo",
-  authDomain: "frontenddiploma.firebaseapp.com",
-  projectId: "frontenddiploma",
-  storageBucket: "frontenddiploma.appspot.com",
-  messagingSenderId: "49895695964",
-  appId: "1:49895695964:web:c8a53446e1bd004d62a899",
-  measurementId: "G-N88RWTGXBL",
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDjxpW0xPHPlh-MV4BxoJ6LH3hnJMo9Edo",
+//   authDomain: "frontenddiploma.firebaseapp.com",
+//   projectId: "frontenddiploma",
+//   storageBucket: "frontenddiploma.appspot.com",
+//   messagingSenderId: "49895695964",
+//   appId: "1:49895695964:web:c8a53446e1bd004d62a899",
+//   measurementId: "G-N88RWTGXBL",
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
 
 Sentry.init({
   dsn:
@@ -36,29 +36,29 @@ Sentry.init({
   // for finer control
   tracesSampleRate: 1.0,
 });
-
+//Todo: navbar change of pages
 class App extends Component {
   render() {
     return (
       <React.Fragment>
         <div className="min-h-screen">
-            <GlobalStyle/>
-            <BrowserRouter>
+          <GlobalStyle />
+          <BrowserRouter>
             <NavBar />
-              <Route path="/" component={News} />
-              <Route path="/delays" component={Delays} />
-              <Route
-                path="/traffic_restrictions"
-                component={Traffic_restrictions}
-                />
-              <Route path="/occupancy_of_stops" component={Occupancy_of_Stops} />
-              <Route
-                path="/predictions_of_delays"
-                component={Predictions_of_Delays}
-                />
-              <Route path="/statistics" component={Statistics} />
-            </BrowserRouter>
-          </div>
+            <Route path="/" component={News} />
+            <Route path="/delays" component={Delays} />
+            <Route
+              path="/traffic_restrictions"
+              component={Traffic_restrictions}
+            />
+            <Route path="/occupancy_of_stops" component={Occupancy_of_Stops} />
+            <Route
+              path="/predictions_of_delays"
+              component={Predictions_of_Delays}
+            />
+            <Route path="/statistics" component={Statistics} />
+          </BrowserRouter>
+        </div>
       </React.Fragment>
     );
   }
