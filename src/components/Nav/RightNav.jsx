@@ -3,13 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Ul = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
-  z-index: 20;
-  li {
-    padding: 5px 10px;
-  }
+
   @media (max-width: 768px) {
     flex-flow: column nowrap;
     background-color: #7e7bff;
@@ -27,51 +21,55 @@ const Ul = styled.ul`
   }
 `;
 
+const navbarValues = [
+  {
+    to:"/",
+    label:"Aktuality"
+  },
+  {
+    to:"/delays",
+    label:"Meškania"
+  },
+  {
+    to:"/traffic_restrictions",
+    label:"Dopravné obmedzenia"
+  },
+  {
+    to:"/occupancy_of_stops",
+    label:"Vyťaženosť zastávok"
+  },
+  {
+    to:"/predictions_of_delays",
+    label:"Predikcie meškaní"
+  },
+  {
+    to:"/statistics",
+    label:"Štatistiky"
+  }
+]
+
 const RightNav = ({ open }) => {
+  
+  // TODo fix padding of links
   return (
     <Ul
       open={open}
       className="
+      flex
       xl:justify-center xl:text-center
       lg:justify-center lg:text-center"
     >
-      <Link
-        to="/"
-        className="hover:underline navbarText xl:text-xl lg:text-lg md:text-base sm:text-base text-center xl:py-2 xl:px-10 lg:py-2 lg:px-10 lg:mt-2 md:p-3"
-      >
-        Aktuality
-      </Link>
-      <Link
-        to="/delays"
-        className="hover:underline navbarText xl:text-xl lg:text-lg md:text-base sm:text-base text-center justify-center xl:py-2 xl:px-10 lg:py-2 lg:px-10 lg:mt-2 md:p-3 md:ml-2"
-      >
-        {" "}
-        Meškania
-      </Link>
-      <Link
-        to="/traffic_restrictions"
-        className="hover:underline navbarText xl:text-xl lg:text-lg md:text-base sm:text-base text-center justify-center xl:py-2 xl:px-10 lg:py-2 lg:px-10 lg:mt-2 md:p-3 md:ml-2"
-      >
-        Dopravné obmedzenia
-      </Link>
-      <Link
-        to="/occupancy_of_stops"
-        className="hover:underline navbarText xl:text-xl lg:text-lg md:text-base sm:text-base text-center justify-center xl:py-2 xl:px-10 lg:py-2 lg:px-10 lg:mt-2 md:p-3 md:ml-2"
-      >
-        Vyťaženosť zastávok
-      </Link>
-      <Link
-        to="/predictions_of_delays"
-        className="hover:underline navbarText xl:text-xl lg:text-lg md:text-base sm:text-base text-center justify-center xl:py-2 xl:px-10 lg:py-2 lg:px-10 lg:mt-2 md:p-3 md:ml-2"
-      >
-        Predikcie meškaní
-      </Link>
-      <Link
-        to="/statistics"
-        className="hover:underline navbarText xl:text-xl lg:text-lg md:text-base sm:text-base text-center justify-center xl:py-2 xl:px-10 lg:py-2 lg:px-10 lg:mt-2 md:p-3 md:ml-2"
-      >
-        Štatistiky
-      </Link>
+      {
+        navbarValues.map(({to, label}, i) => {
+          return <Link
+          key={i}
+          to={to}
+          className="hover:underline text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
+        >
+          {label}
+        </Link>
+        })
+      }
     </Ul>
   );
 };

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { matchPath } from "react-router";
+import { Card } from "../components/Card";
 import { getDelay, getChange_of_delay } from "../services/AggregationsServices";
 
 
@@ -61,8 +62,8 @@ class Delays extends Component {
     );
     console.log(isNews)
     return (
-      <div className="background"> Delays / change_of_delay
-        <div className="whiteBackground">
+      <div> Delays / change_of_delay
+        <Card>
           <div className="text_name">Delays</div>
           <div>
             <button
@@ -86,7 +87,7 @@ class Delays extends Component {
           {/* <div className="map my-2">
             <MyMap />
           </div> */}
-        </div>
+        </Card>
       </div>
     );
   }

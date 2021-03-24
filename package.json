@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.8.1",
     "axios": "^0.21.1",
     "firebase": "^8.2.10",
+    "formik": "^2.2.6",
     "leaflet": "^1.7.1",
     "plotly.js": "^1.58.4",
     "react": "^17.0.1",

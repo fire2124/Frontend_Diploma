@@ -5,25 +5,24 @@ import Logo from "../../images/PO-TOK-Logo.png";
 
 
 const Nav = styled.nav`
-  width: 100%;
-  height: 55px;
-  padding: 0 20px;
+  // padding: 0 20px;
   display: flex;
   justify-content: space-between;
   .logo {
     padding: 15px 0;
   }
+  background: #fff;
 `;
 
 const Navbar = () => {
   return (
-    <Nav className="xl:my-3 allWidth">
+    <Nav className="allWidth px-5">
       <a href="/" >
         <img
           src={Logo}
           alt="Logo"
           width="200px"
-          className=" xl:ml-2 lg:my-2"
+          className="py-3"
         />
       </a>
       <Burger/>

@@ -26,7 +26,7 @@ class Traffic_restrictions extends Component {
   }
   render() {
     return (
-      <div className="background"> Traffic_restrictions
+      <div> Traffic_restrictions
         <div>
           <button
             onClick={() => {

@@ -13,6 +13,7 @@ import NavBar from "./components/Nav/Navbar";
 import "./App.css";
 import "./assets/add.css";
 import "./assets/main.css";
+import { GlobalStyle } from "./GlobalStyles"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDjxpW0xPHPlh-MV4BxoJ6LH3hnJMo9Edo",
@@ -40,24 +41,24 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        
-        <main>
-          <BrowserRouter>
-          <NavBar />
-            <Route path="/" component={News} />
-            <Route path="/delays" component={Delays} />
-            <Route
-              path="/traffic_restrictions"
-              component={Traffic_restrictions}
-            />
-            <Route path="/occupancy_of_stops" component={Occupancy_of_Stops} />
-            <Route
-              path="/predictions_of_delays"
-              component={Predictions_of_Delays}
-            />
-            <Route path="/statistics" component={Statistics} />
-          </BrowserRouter>
-        </main>
+        <div className="min-h-screen">
+            <GlobalStyle/>
+            <BrowserRouter>
+            <NavBar />
+              <Route path="/" component={News} />
+              <Route path="/delays" component={Delays} />
+              <Route
+                path="/traffic_restrictions"
+                component={Traffic_restrictions}
+                />
+              <Route path="/occupancy_of_stops" component={Occupancy_of_Stops} />
+              <Route
+                path="/predictions_of_delays"
+                component={Predictions_of_Delays}
+                />
+              <Route path="/statistics" component={Statistics} />
+            </BrowserRouter>
+          </div>
       </React.Fragment>
     );
   }

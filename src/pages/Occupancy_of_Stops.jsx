@@ -35,7 +35,7 @@ class Occupancy_of_Stops extends Component {
 
   render() {
     return (
-      <div className="background"> Occupancy_of_Stops
+      <div> Occupancy_of_Stops
         <div>
           <button
             onClick={() => {

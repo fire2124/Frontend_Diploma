@@ -1,10 +1,17 @@
 .background {
   background: #f8f9fe;
   position: absolute;
-  width: 1900px;
-  height: 1000px;
+  min-height: 80vh;
   left: 0px;
   top: 86px;
+}
+.filter-name {
+  font-family: Baloo 2;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #7E7D7D;
 }
 
 .leaflet-container {
@@ -12,21 +19,12 @@
   height: 100vh;
 }
 
-.whiteBackground {
-  position: absolute;
-  width: 962px;
-  height: 718px;
-  left: 414px;
-  top: 118px;
-  background: #ffffff;
-  border-radius: 24px;
-}
 .text_name {
-  position: absolute;
+  /* position: absolute;
   width: 211px;
   height: 25px;
   left: 438px;
-  top: 142px;
+  top: 142px; */
   font-family: Baloo 2;
   font-style: normal;
   font-weight: 500;
@@ -43,62 +41,4 @@
   border-radius: 8px;
 }
 
-@media (min-width: 320px) {
-  .navbarText {
-    font-family: Baloo 2;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 137.19%;
-    font-variant: small-caps;
-    color: #ffffff;
-  }
 
-  .navbarText.active {
-    font-family: Baloo 2;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 137.19%;
-    font-variant: small-caps;
-    color: #ffffff;
-  }
-}
-
-@media (min-width: 640px) {
-}
-
-@media (min-width: 760px) {
-  .navbarText {
-    font-family: Baloo 2;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 137.19%;
-    font-variant: small-caps;
-    color: #aeaeae;
-  }
-
-  .navbarText.active {
-    font-family: Baloo 2;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 137.19%;
-    font-variant: small-caps;
-    color: #7e7bff;
-  }
-}
-
-@media (min-width: 1024px) {
-}
-
-@media (min-width: 1280px) {
- 
-}
-@media (min-width: 1920px) {
-  .background {
-    background: #f8f9fe;
-    position: absolute;
-    width: 1900px;
-    height: 1000px;
-    left: 0px;
-    top: 86px;
-  }
-}
