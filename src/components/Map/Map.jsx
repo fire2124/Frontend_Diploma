@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { GeoPoints } from "./GeoPoints"
 import "leaflet/dist/leaflet.css";
 
-const Map = (data) => {
-  console.log("map");
-  console.log(data);
+
+const Map = ({data}) => {
   const position = [48.99, 21.244];
     return (
       <MapContainer
@@ -17,9 +17,8 @@ const Map = (data) => {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        <GeoPoints data={data}/>
       </MapContainer>
     );
-  
-  
 };
 export default Map;

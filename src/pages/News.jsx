@@ -1,25 +1,10 @@
 import React, { Component } from "react";
-import { matchPath } from "react-router";
 import { getData } from "../services/News";
 import MyMap from "../components/Map/Map";
-import { GeoJSON, MapContainer, TileLayer } from "react-leaflet";
-import { Marker } from "react-leaflet";
-import { Icon, Popup } from "leaflet";
-
-import "leaflet/dist/leaflet.css";
 import { SidePanel } from "../components/SidePanel";
 import { NewsForm } from "../components/Forms/NewsForm";
 import { Card } from "../components/Card";
-import { layerGroup } from "leaflet";
 
-const geojsonMarkerOptions = {
-  radius: 8,
-  fillColor: "#ff7800",
-  color: "#000",
-  weight: 1,
-  opacity: 1,
-  fillOpacity: 0.8,
-};
 
 class News extends Component {
   state = {
@@ -45,22 +30,13 @@ class News extends Component {
   };
   handleDownload = async () => {
     let response = await getData();
-    console.log(response);
-    this.setState({
-      mhdPresov: response.markersMhd,
-      sadPresov: response.markersSad,
-      trains: response.markersTrains,
-      traffic: response.markersTraffic,
-      mhdStops: response.markersMhdStops,
-      sadStops: response.markersSadStops,
-      trainStops: response.markersTrainStops,
-    });
+    this.setState(response);
   };
 
   //TODO: traffic: response.markersTraffic,
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     
     //const {data}  = this.state.mhdPresov
     return (
@@ -77,9 +53,7 @@ class News extends Component {
             Aktuálne dopravné informácie
           </div>
           <div className="map my-2">
-           
-             {/*<MyMap data={data}/>*/}
-              
+             <MyMap data={this.state}/>
           </div>
         </Card>
       </div>

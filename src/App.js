@@ -14,8 +14,8 @@ import { GlobalStyle } from "./GlobalStyles";
 import  { firebaseInitialze }  from "./services/firebase";
 import  {sentry}  from "./services/sentry";
 
-firebaseInitialze()
-sentry();
+//firebaseInitialze()
+//sentry();
 
 //Todo: navbar change of pages
 class App extends Component {
@@ -25,28 +25,27 @@ class App extends Component {
         <Router>
           <div className="min-h-screen">
             <GlobalStyle />
-
             <NavBar />
-         
-              <Route path="/">
-                <News />
-              </Route>
-              <Route path="/delays">
-                <Delays />
-              </Route>
-              <Route path="/traffic_restrictions">
-                <TrafficRestrictions />
-              </Route>
-              <Route path="/occupancy_of_stops">
-                <OccupancyOfStops />
-              </Route>
-              <Route path="/predictions_of_delays">
-                <PredictionsOfDelays />
-              </Route>
-              <Route path="/statistics">
-                <Statistics />
-              </Route>
-            
+              <Switch>
+                <Route exact path="/">
+                  <News />
+                </Route>
+                <Route path="/delays">
+                  <Delays />
+                </Route>
+                <Route path="/traffic_restrictions">
+                  <TrafficRestrictions />
+                </Route>
+                <Route path="/occupancy_of_stops">
+                  <OccupancyOfStops />
+                </Route>
+                <Route path="/predictions_of_delays">
+                  <PredictionsOfDelays />
+                </Route>
+                <Route path="/statistics">
+                  <Statistics />
+                </Route>
+              </Switch>
           </div>
         </Router>
       </React.Fragment>

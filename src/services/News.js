@@ -1,4 +1,4 @@
-import { getMarkers } from "../components/Map/Marker";
+//import { getMarkers } from "../components/Map/Marker";
 import {
   getMhdPoBusses,
   getSadPoBusses,
@@ -22,21 +22,21 @@ import {
 // return and make markers for map -Done
 
 export const getData = async () => {
-  const markersMhd = await getMarkers("mhdPresov",getMhdPoBusses)
-  const markersSad = await getMarkers("sadPresov",getSadPoBusses)
-  const markersTrains = await getMarkers("trains",getTrains)
-  const markersMhdStops = await getMarkers("mhdStops",getMhdStops)
-  const markersSadStops = await getMarkers("sadStops",getSadStops)
-  const markersTrainStops = await getMarkers("trainStops",getTrainStops)
-  const markersTraffic = await getMarkers("taffic",getTraffic)
+  const mhdPresov = await getMhdPoBusses()
+  const sadPresov = await getSadPoBusses()
+  const trains = await getTrains()
+  const mhdStops = await getMhdStops()
+  const sadStops = await getSadStops()
+  const trainStops = await getTrainStops()
+  const traffic = await getTraffic()
 
   return {
-    markersMhd: markersMhd,
-    markersSad: markersSad,
-    markersTrains: markersTrains,
-    markersMhdStops: markersMhdStops,
-    markersSadStops: markersSadStops,
-    markersTrainStops: markersTrainStops,
-    markersTraffic: markersTraffic
+    mhdPresov,
+    sadPresov,
+    trains,
+    traffic,
+    mhdStops,
+    sadStops,
+    trainStops,
   };
 };
