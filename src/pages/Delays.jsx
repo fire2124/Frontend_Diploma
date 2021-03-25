@@ -52,16 +52,8 @@ class Delays extends Component {
       console.log(res59);
     } catch (error) {}
   }
-
-
-
   render() {
-    const isNews = !!matchPath(
-      this.props.location.pathname,
-      '/'
-    );
-    console.log(isNews)
-    return (
+        return (
       <div> Delays / change_of_delay
         <Card>
           <div className="text_name">Delays</div>

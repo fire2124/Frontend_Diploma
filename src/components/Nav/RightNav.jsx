@@ -22,33 +22,32 @@ const Ul = styled.ul`
 
 const navbarValues = [
   {
-    to:"/",
-    label:"Aktuality"
+    to: "/",
+    label: "Aktuality",
   },
   {
-    to:"/delays",
-    label:"Meškania"
+    to: "/delays",
+    label: "Meškania",
   },
   {
-    to:"/traffic_restrictions",
-    label:"Dopravné obmedzenia"
+    to: "/traffic_restrictions",
+    label: "Dopravné obmedzenia",
   },
   {
-    to:"/occupancy_of_stops",
-    label:"Vyťaženosť zastávok"
+    to: "/occupancy_of_stops",
+    label: "Vyťaženosť zastávok",
   },
   {
-    to:"/predictions_of_delays",
-    label:"Predikcie meškaní"
+    to: "/predictions_of_delays",
+    label: "Predikcie meškaní",
   },
   {
-    to:"/statistics",
-    label:"Štatistiky"
-  }
-]
+    to: "/statistics",
+    label: "Štatistiky",
+  },
+];
 
 const RightNav = ({ open }) => {
-  
   // TODo fix padding of links
   return (
     <Ul
@@ -58,17 +57,19 @@ const RightNav = ({ open }) => {
       xl:justify-center xl:text-center
       lg:justify-center lg:text-center"
     >
-      {
-        navbarValues.map(({to, label}, i) => {
-          return <Link
-          key={i}
-          to={to}
-          className="hover:underline text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
-        >
-          {label}
-        </Link>
-        })
-      }
+      {navbarValues.map(({ to, label }, i) => {
+        return (
+          <li>
+            <Link
+              key={i}
+              to={to}
+              className="hover:underline text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
+            >
+              {label}
+            </Link>
+          </li>
+        );
+      })}
     </Ul>
   );
 };

@@ -28,7 +28,7 @@ export const getData = async () => {
   const markersMhdStops = await getMarkers("mhdStops",getMhdStops)
   const markersSadStops = await getMarkers("sadStops",getSadStops)
   const markersTrainStops = await getMarkers("trainStops",getTrainStops)
-  //const markersTraffic = await getMarkers("",getTraffic)
+  const markersTraffic = await getMarkers("taffic",getTraffic)
 
   return {
     markersMhd: markersMhd,
@@ -37,6 +37,6 @@ export const getData = async () => {
     markersMhdStops: markersMhdStops,
     markersSadStops: markersSadStops,
     markersTrainStops: markersTrainStops,
-    //markersTraffic: markersTraffic
+    markersTraffic: markersTraffic
   };
 };

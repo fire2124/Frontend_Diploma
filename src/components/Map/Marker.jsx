@@ -46,13 +46,14 @@ const getMapIcon = (type) => {
       break;
   }
 };
- // case "traffic":
-    //   return // is line or point // TODO: traffic
+// case "traffic":
+//   return // is line or point // TODO: traffic
 
 export const getMarkers = async (type, method) => {
   const data = await method();
   let markers = [];
-  let i = 0
+  let i = 0;
+
   data.map((obj) =>
     markers.push(
       <Marker
@@ -61,9 +62,7 @@ export const getMarkers = async (type, method) => {
         type={type}
         icon={getMapIcon(type)}
       >
-        <Popup>
-            {obj.properties}
-        </Popup>
+        <Popup>{obj.properties}</Popup>
       </Marker>
     )
   );

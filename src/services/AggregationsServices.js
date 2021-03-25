@@ -33,9 +33,8 @@ export async function getTraffic_queries(time_interval) {
     let response = await http.get(
       `${apiEndpoint}/traffic_queries/${time_interval}`
     );
-    console.log(response)
     if (response.status === 200) {
-      return response;
+      return response.data;
     }
   } catch (error) {
     console.log(error);
@@ -49,7 +48,7 @@ export async function getTimeOnCurrentStop(Current_Stop, time_interval) {
       Current_Stop: Current_Stop
       , time_interval: time_interval
     });
-    console.log(response)
+    //console.log(response)
     if (response.status === 200) {
       return response.data;
     }
@@ -67,8 +66,7 @@ export async function getTimeOnStopsByCurrentBus(ROUTE_NUMBER, time_interval) {
         , time_interval: time_interval
       }
     );
-    console.log(response)
-
+    //console.log(response)
     if (response.status === 200) {
       return response.data;
     }
