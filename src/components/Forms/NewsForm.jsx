@@ -50,7 +50,7 @@ export const NewsForm = ({ onChange }) => (
           <div className="pt-2">
             <label key={i}>
               <Field type="checkbox" name={name} />
-              {label}
+              {" "}{label}
             </label>
           </div>
         );

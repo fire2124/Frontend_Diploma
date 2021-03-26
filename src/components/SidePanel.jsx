@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Card } from "./Card";
 
-const buttonArrow = (isOpen) => (isOpen ? `<<` : `>>`);
+const buttonArrow = (isOpen) =>
+  isOpen ? (
+    <div className="font-extrabold">{`<<`}</div>
+  ) : (
+    <div className="font-extrabold">{`>>`}</div>
+  );
 
 const SidePanelTitle = styled.h4`
   font-family: Baloo 2;
