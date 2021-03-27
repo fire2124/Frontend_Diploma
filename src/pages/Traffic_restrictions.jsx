@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import MyMap from "../components/Map/Map";
+import MyMap from "../components/map/Map";
 import { SidePanel } from "../components/SidePanel";
 import { getData } from "../services/Traffic";
 import { Card } from "../components/Card";
-import { TrafficForm } from "../components/Forms/TrafficForm";
+import { TrafficForm } from "../components/forms/TrafficForm";
 
 const initState = {
   res15min: null,

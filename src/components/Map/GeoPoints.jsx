@@ -1,7 +1,7 @@
 import "leaflet/dist/leaflet.css";
-import { returnMarkerTraffic } from "./Markers/MarkerTraffic";
-import { returnMarkerVehicles } from "./Markers/MarkerVehicles";
-import { returnMarkerStop } from "./Markers/MarkerStop";
+import { returnMarkerTraffic } from "./markers/MarkerTraffic";
+import { returnMarkerVehicles } from "./markers/MarkerVehicles";
+import { returnMarkerStop } from "./markers/MarkerStop";
 
 export const GeoPoints = ({ data }) => {
   const keys = Object.keys(data);

@@ -37,14 +37,14 @@ const navbarValues = [
     to: "/occupancy_of_stops",
     label: "Vyťaženosť zastávok",
   },
-  {
-    to: "/predictions_of_delays",
-    label: "Predikcie meškaní",
-  },
-  {
-    to: "/statistics",
-    label: "Štatistiky",
-  },
+  // {
+  //   to: "/predictions_of_delays",
+  //   label: "Predikcie meškaní",
+  // },
+  // {
+  //   to: "/statistics",
+  //   label: "Štatistiky",
+  // },
 ];
 
 const RightNav = ({ open }) => {

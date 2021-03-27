@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import {
   getTimeOnCurrentStop,
   getTimeOnStopsByCurrentBus,
 } from "../services/AggregationsServices";
-import Plot from "react-plotly.js";
+import { SidePanel } from "../components/SidePanel";
+import { StopForm } from "../components/forms/StopsForm";
 
-class Occupancy_of_Stops extends Component {
-  state = {
-    ocOnStop: null,
-    ocByBus: null,
-  };
-  
-  handleGetTimeOnCurrentStop = async () => {
+export const Occupancy_of_Stops = ({ onChange }) => {
+  const handleGetTimeOnCurrentStop = async () => {
     let hours = 0;
     let minutes = 0;
     let sec = 0;
@@ -25,13 +21,13 @@ class Occupancy_of_Stops extends Component {
       minutes,
       sec,
     });
-    this.setState({
-      ocOnStop: res.features,
-      ocByBus: this.state.ocByBus,
-    });
+    // this.setState({
+    //   ocOnStop: res.features,
+    //   ocByBus: this.state.ocByBus,
+    // });
   };
 
-  handleGetTimeOnStopsByCurrentBus = async () => {
+  const handleGetTimeOnStopsByCurrentBus = async () => {
     let hours = 0;
     let minutes = 0;
     let sec = 0;
@@ -45,56 +41,45 @@ class Occupancy_of_Stops extends Component {
       minutes,
       sec,
     });
-    this.setState({
-      ocOnStop: this.state.ocOnStop,
-      ocByBus: res.features,
-    });
+    // this.setState({
+    //   ocOnStop: this.state.ocOnStop,
+    //   ocByBus: res.features,
+    // });
   };
 
-  render() {
-    if (this.state.ocOnStop != null)
-      this.state.ocOnStop.map((e) => console.log(e.properties));
-    if (this.state.ocByBus != null)
-      this.state.ocByBus.map((e) => console.log(e.properties));
+  // if (this.state.ocOnStop != null)
+  //   this.state.ocOnStop.map((e) => console.log(e.properties));
+  // if (this.state.ocByBus != null)
+  //   this.state.ocByBus.map((e) => console.log(e.properties));
 
-    return (
+  return (
+    <div>
+      <SidePanel title={"Vyberte konkrétnu zastávku a interval"} className="pr-2">
+        <StopForm />
+        {/* <StopForm onChange={formChange} /> */}
+      </SidePanel>{" "}
+      Occupancy_of_Stops
       <div>
-        {" "}
-        Occupancy_of_Stops
-        <div>
-          <button
-            onClick={() => {
-              this.handleGetTimeOnCurrentStop();
-            }}
-          >
-            Download_TimeOnCurrentStop
-          </button>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              this.handleGetTimeOnStopsByCurrentBus();
-            }}
-          >
-            Download_TimeOnStopsByCurrentBus
-          </button>
-          <Plot
-            data={[
-              {
-                x: [1, 2, 3],
-                y: [2, 6, 3],
-                type: "scatter",
-                mode: "lines+markers",
-                marker: { color: "red" },
-              },
-              { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
-            ]}
-            layout={{ width: 800, height: 500, title: "A Fancy Plot" }}
-          />
-        </div>
+        <button
+          onClick={() => {
+            this.handleGetTimeOnCurrentStop();
+          }}
+        >
+          Download_TimeOnCurrentStop
+        </button>
       </div>
-    );
-  }
-}
+      <div>
+        <button
+          onClick={() => {
+            this.handleGetTimeOnStopsByCurrentBus();
+          }}
+        >
+          Download_TimeOnStopsByCurrentBus
+        </button>
+       
+      </div>
+    </div>
+  );
+};
 
 export default Occupancy_of_Stops;

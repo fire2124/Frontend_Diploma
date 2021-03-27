@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useForm, useWatch } from "react-hook-form";
-import { Switch } from "./Buttons/Switch";
-import { RadioButtons } from "./Buttons/Radio";
-
 import styled from "styled-components";
+import { useForm, useWatch } from "react-hook-form";
+import { Switch } from "./common/Switch";
+import { RadioButtons } from "./common/Radio";
 
 const SidePanelTitle = styled.h4`
   font-family: Baloo 2;

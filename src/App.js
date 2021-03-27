@@ -6,7 +6,7 @@ import TrafficRestrictions from "./pages/Traffic_restrictions";
 import OccupancyOfStops from "./pages/Occupancy_of_Stops";
 import PredictionsOfDelays from "./pages/Predictions_of_Delays";
 import Statistics from "./pages/Statistics";
-import NavBar from "./components/Nav/Navbar";
+import NavBar from "./components/nav/Navbar";
 import "./App.css";
 import "./assets/add.css";
 import "./assets/main.css";
@@ -39,12 +39,12 @@ class App extends Component {
                 <Route path="/occupancy_of_stops">
                   <OccupancyOfStops />
                 </Route>
-                <Route path="/predictions_of_delays">
+                {/* <Route path="/predictions_of_delays">
                   <PredictionsOfDelays />
                 </Route>
                 <Route path="/statistics">
                   <Statistics />
-                </Route>
+                </Route> */}
               </Switch>
           </div>
         </Router>

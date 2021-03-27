@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { getData } from "../services/News";
-import MyMap from "../components/Map/Map";
+import MyMap from "../components/map/Map";
 import { SidePanel } from "../components/SidePanel";
-import { NewsForm } from "../components/Forms/NewsForm";
+import { NewsForm } from "../components/forms/NewsForm";
 import { Card } from "../components/Card";
 import { useInterval } from "../services/useInterval"
 

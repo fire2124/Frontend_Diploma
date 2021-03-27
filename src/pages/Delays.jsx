@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { SidePanel } from "../components/SidePanel";
-import { DelayForm } from "../components/Forms/DelayForm";
+import { DelayForm } from "../components/forms/DelayForm";
 import { Card } from "../components/Card";
-import MapExample from "../components/Map/Heatmap";
+import MapExample from "../components/map/Heatmap";
 import { getData } from "../services/Delays";
 
 const initState = {
