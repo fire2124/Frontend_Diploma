@@ -1,11 +1,5 @@
-import React, { Component } from "react";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  ZoomControl,
-} from "react-leaflet";
+import React from "react";
+import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 import { GeoPoints } from "./GeoPoints";
 import "leaflet/dist/leaflet.css";
 

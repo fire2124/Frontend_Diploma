@@ -4,8 +4,8 @@ import { SidePanel } from "../components/SidePanel";
 import { NewsForm } from "../components/Forms/NewsForm";
 import { Card } from "../components/Card";
 import MapExample from "../components/Map/Heatmap";
-
 import { getDelay, getChange_of_delay } from "../services/AggregationsServices";
+
 
 class Delays extends Component {
   state = { // dat aj typ ? ci sa bude prepisovat aktualny ? ja by som dal ze sa bude prepisovat
@@ -90,6 +90,7 @@ class Delays extends Component {
             <div className="text_name py-5 px-5">
               Aktuálne dopravné informácie
             </div>
+            
             <div className="map my-2">
               {/* data={this.state}*/}
               <MapExample />

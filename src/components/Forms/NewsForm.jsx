@@ -1,6 +1,6 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
+import React, {useEffect} from "react";
 import PropTypes from "prop-types";
+import { useForm, useWatch } from "react-hook-form";
 
 const fields = [
   {
@@ -33,34 +33,29 @@ const fields = [
   },
 ];
 
-export const NewsForm = ({ onChange }) => (
-  <Formik
-    initialValues={{}}
-    handleChange={async (v) => {
-      console.log(v);
-    }}
-    onSubmit={async (values) => {
-      console.log(values);
-      onChange(values);
-    }}
-  >
-    <Form>
-      {fields.map(({ name, label }, i) => {
-        return (
-          <div className="pt-2">
-            <label key={i}>
-              <Field type="checkbox" name={name} />
-              {" "}{label}
-            </label>
-          </div>
-        );
-      })}
-      <button type="submit" className="pt-10 pl-5">
-        Submit
-      </button>
-    </Form>
-  </Formik>
-);
+
+
+export const NewsForm = ({onChange}) => {
+  const { register, control, handleSubmit} = useForm();
+
+  return (
+  <form onSubmit={handleSubmit(onChange)}>
+    {/* register your input into the hook by invoking the "register" function */}
+    {fields.map(({ name, label }, i) => {
+      return (
+        <div className="pt-2" key={i}>
+          <label >
+            <input type="checkbox" name={name} ref={register}/>
+            {" "}{label}
+          </label>
+        </div>
+      );
+    })}
+
+    <input type="submit" />
+  </form>
+  );
+}
 
 NewsForm.propTypes = {
   onChange: PropTypes.func.isRequired,

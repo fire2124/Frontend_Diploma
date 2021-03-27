@@ -59,9 +59,8 @@ const RightNav = ({ open }) => {
     >
       {navbarValues.map(({ to, label }, i) => {
         return (
-          <li>
+          <li key={i}>
             <Link
-              key={i}
               to={to}
               className="hover:underline text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
             >

@@ -1,4 +1,3 @@
-//import { getMarkers } from "../components/Map/Marker";
 import {
   getMhdPoBusses,
   getSadPoBusses,
@@ -12,31 +11,39 @@ import {
 } from "../services/staticDataServices";
 
 
+const dataKeyToService = {
+  "mhdPresov": getMhdPoBusses,
+  "sadPresov":  getSadPoBusses,
+  "trains":  getTrains,
+  "traffic": getTraffic,
+  "mhdStops": getMhdStops,
+  "sadStops": getSadStops,
+  "trainStops": getTrainStops,
+}
 
-// INPUT je output z formu
+export const getData = async (values) => {
+  const returnKeys = [];
+  const serviceFuncs = [];
+  
+  for (const property in values) {
+    if(values[property] === true) {
+      returnKeys.push(property)
+      serviceFuncs.push(dataKeyToService[property])
+    }
+  }
 
-// sql ?? indexdb
-// if is in localstorage or expired
-// global variable cache ?
+  const res = await Promise.all(serviceFuncs.map(f => f()))
 
-// return and make markers for map -Done
+  const ret = res.reduce((a, r, i) => {
+    a[returnKeys[i]] = r
+    return a
+  }, {})
 
-export const getData = async () => {
-  const mhdPresov = await getMhdPoBusses()
-  const sadPresov = await getSadPoBusses()
-  const trains = await getTrains()
-  const mhdStops = await getMhdStops()
-  const sadStops = await getSadStops()
-  const trainStops = await getTrainStops()
-  const traffic = await getTraffic()
-
-  return {
-    mhdPresov,
-    sadPresov,
-    trains,
-    traffic,
-    mhdStops,
-    sadStops,
-    trainStops,
-  };
-};
+  Object.keys(dataKeyToService).forEach((key) => {
+    if (ret.hasOwnProperty(key) === false) {
+      ret[key] = null
+    }
+  })
+  
+  return ret
+}
