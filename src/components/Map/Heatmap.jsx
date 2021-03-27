@@ -12,7 +12,7 @@ import {
 
 const MapExample = ({ data }) => {
   const position = [48.99, 21.244];
-
+  //console.log(data)
   return (
     <MapContainer
       center={position}
