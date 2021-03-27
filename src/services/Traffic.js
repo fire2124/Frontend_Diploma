@@ -1,23 +1,14 @@
-import {
-  getMhdPoBusses,
-  getSadPoBusses,
-  getTrains,
-  getTraffic,
-} from "../services/liveDataService";
-import {
-  getMhdStops,
-  getSadStops,
-  getTrainStops,
-} from "../services/staticDataServices";
+import { getTraffic_queries } from "../services/AggregationsServices";
 
 const dataKeyToService = {
-  mhdPresov: getMhdPoBusses,
-  sadPresov: getSadPoBusses,
-  trains: getTrains,
-  traffic: getTraffic,
-  mhdStops: getMhdStops,
-  sadStops: getSadStops,
-  trainStops: getTrainStops,
+  res15min: getTraffic_queries,
+  res1hour: getTraffic_queries,
+  res3hours: getTraffic_queries,
+  res1418: getTraffic_queries,
+  res1day: getTraffic_queries,
+  res1week: getTraffic_queries,
+  res1month: getTraffic_queries,
+  res59: getTraffic_queries,
 };
 
 export const getData = async (values) => {
@@ -43,6 +34,7 @@ export const getData = async (values) => {
       ret[key] = null;
     }
   });
+  console.log(ret)
 
   return ret;
 };

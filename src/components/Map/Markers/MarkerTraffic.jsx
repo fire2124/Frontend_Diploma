@@ -3,6 +3,8 @@ import { Marker, Popup, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { getMapIcon } from "./getIcon";
 
+//TODO: if you want cluster https://www.npmjs.com/package/react-leaflet-cluster
+
 export const returnMarkerTraffic = (obj, i)=> {
     const limeOptions = { color: "purple" };
     if (obj.geometry.type === "Point") {
