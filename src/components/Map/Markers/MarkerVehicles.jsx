@@ -1,7 +1,7 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { getMapIcon } from "./getIcon";
+import { getIconVehicles } from "./getIconVehicles";
 
 //TODO: if you want cluster https://www.npmjs.com/package/react-leaflet-cluster
 export const returnMarkerVehicles = (obj, i)=>{
@@ -9,7 +9,7 @@ export const returnMarkerVehicles = (obj, i)=>{
     <Marker
       key={i}
       position={[obj.geometry.coordinates[1], obj.geometry.coordinates[0]]}
-      icon={getMapIcon(obj.properties.Type)}
+      icon={getIconVehicles(obj.properties.Type,obj.properties.DELAY)}
     >
       <Popup>
         <div>

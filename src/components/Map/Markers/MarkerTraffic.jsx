@@ -6,7 +6,7 @@ import { getMapIcon } from "./getIcon";
 //TODO: if you want cluster https://www.npmjs.com/package/react-leaflet-cluster
 
 export const returnMarkerTraffic = (obj, i)=> {
-    const limeOptions = { color: "purple" };
+    const limeOptions = { color: "#6EB1FF" };
     if (obj.geometry.type === "Point") {
       return (
         <Marker

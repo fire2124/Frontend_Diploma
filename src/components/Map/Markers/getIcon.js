@@ -1,51 +1,42 @@
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 const url = "../../img/";
-const iconSize = [25, 25];
+const iconSizeMhd = [19, 28];
+const iconSizeSad = [21, 28];
+const iconSizeTrain = [21, 23.5];
+const iconSizeTraffic = [20.5, 28];
 
-const bus = new Icon({
-  iconUrl: `${url}/markers/bus.png`,
-  iconSize: iconSize,
-});
-const sad = new Icon({
-  iconUrl: `${url}/markers/sad.png`,
-  iconSize: iconSize,
-});
-const train = new Icon({
-  iconUrl: `${url}/markers/train.png`,
-  iconSize: iconSize,
-});
-const mhdStops = new Icon({
-  iconUrl: `${url}/markers/bus_Stop.png`,
-  iconSize: iconSize,
-});
-const sadStops = new Icon({
-  iconUrl: `${url}/markers/bus_Stop.png`,
-  iconSize: iconSize,
-});
-const trainStops = new Icon({
-  iconUrl: `${url}/markers/train_Stop.png`,
-  iconSize: iconSize,
+const mhd_stop = new Icon({
+  iconUrl: `${url}/markers/mhd_stop.png`,
+  iconSize: iconSizeMhd,
 });
 
-export const getMapIcon = (type)=>{
-  // TODO: different colors
+const sad_stop = new Icon({
+  iconUrl: `${url}/markers/sad_stop.png`,
+  iconSize: iconSizeSad,
+});
+
+const train_stop = new Icon({
+  iconUrl: `${url}/markers/train_stop.png`,
+  iconSize: iconSizeTrain,
+});
+
+const traffic = new Icon({
+  iconUrl: `${url}/markers/traffic.png`,
+  iconSize: iconSizeTraffic,
+});
+
+export const getMapIcon = (type) => {
   switch (type) {
     case "Traffic":
-      return bus;
-    case "MHD":
-      return bus;
-    case "SAD":
-      return sad;
-    case "Train":
-      return train;
+      return traffic;
     case "Stop_Mhd":
-      return mhdStops;
+      return mhd_stop;
     case "Stop_Sad":
-      return sadStops;
+      return sad_stop;
     case "Stop_Train":
-      return trainStops;
+      return train_stop;
     default:
       break;
   }
-}
+};
