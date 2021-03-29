@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useForm, useWatch } from "react-hook-form";
 import styled from "styled-components";
 
-
 const SideText = styled.div`
   font-family: Baloo 2;
   font-style: normal;
@@ -22,7 +21,7 @@ export const TrafficForm = ({ onChange }) => {
         Vyberte si konkrétnu líniu dopravného obmedzenia. Po zakliknutí sa
         zobrazia podrobnosti.
       </SideText>
-      <input type="submit" className="pt-2"/>
+      {onChange ? <input type="submit" className="pt-2" /> : null}
     </form>
   );
 };
