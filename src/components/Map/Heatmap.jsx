@@ -4,7 +4,6 @@ import L from "leaflet";
 import "leaflet.heat";
 
 const Heatmap = ({ data }) => {
-
   const position = [48.99, 21.244];
   let finalData = [];
   if (data !== undefined) {
@@ -37,9 +36,10 @@ const Heatmap = ({ data }) => {
           return [p[0], p[1]];
         })
       : [];
-    L.heatLayer(points, { radius: 30 }).addTo(map);
-  }, []);
+    L.heatLayer(points, { radius: 25 }).addTo(map);
+  }, [finalData, position]);
 
+  //TODO: ak je layer ako sa da posuvat ? -> layer prekryje mapu 
   return (
     <div
       id="map"
