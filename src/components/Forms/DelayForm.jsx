@@ -16,74 +16,66 @@ const SidePanelTitle = styled.h4`
 const fields = [
   {
     label: "MHD",
-    name: "mhdPresov",
-    checked: "a",
-    value: "a",
-    inputProps: "A",
+    value: "MHD",
   },
   {
     label: "SAD",
-    name: "sadPresov",
-    checked: "b",
-    value: "b",
-    inputProps: "B",
+    value: "SAD"
   },
   {
     label: "Vlaky",
-    name: "trains",
-    checked: "c",
-    value: "c",
-    inputProps: "C",
+    value: "Train",
   },
 ];
 
-const fieldsButton = [
-  {
-    label: "Meškanie",
-    name: "getDelay",
-    description: `Táto heatmapa zobrazuje naakumulované meškanie spojov za určité časové obdobie`,
-  },
-  {
-    label: "Vytváranie meškaní",
-    name: "getChange_of_delay",
-    description: `Táto heatmapa zobrazuje, kde konkrétne vozidlá vytvárajú meškanie`,
-  },
-];
+const description1 = `Táto heatmapa zobrazuje naakumulované meškanie spojov za určité časové obdobie`
+const description2 = `Táto heatmapa zobrazuje, kde konkrétne vozidlá vytvárajú meškanie`
 
+const Description = React.memo(({ delay }) => <p>
+  {delay === `delay` ? description1 : description2}
+</p>
+)
 
 export const DelayForm = ({ onChange }) => {
-  const { register, control, handleSubmit } = useForm();
-  const [selectedValue, setSelectedValue] = React.useState("a");
+  const { register, watch, handleSubmit } = useForm(
+    {
+      defaultValues: {
+        vehicle: 'MHD',
+        delay: 'delay'
+      }
+    }
+  )
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+  const delay = watch('delay')
+
   return (
     <form onSubmit={handleSubmit(onChange)}>
-      <Switch
-        onChange={handleChange}
-        fields={fieldsButton}
-        textTitle={`Čo popisuje daná heatmapa?`}
-      />
+      <label>
+        <input name="delay" type="radio" ref={register} value="delay" className="hidden" />
+        Meškanie
+      </label>
+      {" | "}
+      <label>
+        <input name="delay" type="radio" ref={register} value="delayChange" className="hidden" />
+        Vytváranie meškaní
+      </label>
+      <Description delay={delay} />
       <SidePanelTitle className="pt-5">
         Vyberte typ dopravného prostriedku, na ktorom chcete zistiť meškanie
       </SidePanelTitle>
-      {fields.map(({ name, label, checked, value, inputProps }, i) => {
+
+      {fields.map(({ label, value }, i) => {
         return (
-          <div>
-            <RadioButtons
-              checked={selectedValue === checked}
-              onChange={handleChange}
-              value={value}
-              inputProps={inputProps}
-              label={label}
-            />
-            {label}
-          </div>
+          <label key={i}>
+            <input name="vehicle" type="radio" ref={register} value={value} />{" "}
+            {label}{" "}
+          </label>
         );
       })}
+      <div className="pt-5">
+        <input type="submit" />
+      </div>
 
-      <input type="submit" />
     </form>
   );
 };

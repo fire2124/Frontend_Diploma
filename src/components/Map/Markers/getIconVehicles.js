@@ -36,7 +36,7 @@ const train_red = new Icon({
 });
 
 export const getIconVehicles = (type, delay) => {
-  if (delay > 0) {
+  if (delay <= 0) {
     switch (type) {
       case "MHD":
         return mhd_purple;

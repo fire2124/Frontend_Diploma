@@ -10,7 +10,7 @@ import {
 //import HeatmapLayer from '../src/HeatmapLayer';
 //import { addressPoints } from './realworld.10000.js';
 
-const MapExample = ({ data }) => {
+const Heatmap = ({ data }) => {
   const position = [48.99, 21.244];
   //console.log(data)
   return (
@@ -20,15 +20,15 @@ const MapExample = ({ data }) => {
       style={{ height: "95%", width: "150%" }}
       className="rounded-tr-lg rounded-tl-lg rounded-bl-lg rounded-br-lg control"
       scrollWheelZoom={true}
-    >
-      {/* <HeatmapLayer
-            fitBoundsOnLoad
-            fitBoundsOnUpdate
-            points={addressPoints}
-            longitudeExtractor={m => m[1]}
-            latitudeExtractor={m => m[0]}
-            intensityExtractor={m => parseFloat(m[2])} /> */}
-      <TileLayer
+     >
+    {/* //   <HeatmapLayer
+    //         fitBoundsOnLoad
+    //         fitBoundsOnUpdate
+    //         points={data.features}
+    //         longitudeExtractor={m => m[1]}
+    //         latitudeExtractor={m => m[0]}
+    //         intensityExtractor={m => parseFloat(m[2])} />  */}
+       <TileLayer
         url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
@@ -37,4 +37,4 @@ const MapExample = ({ data }) => {
   );
 };
 
-export default MapExample;
+export default Heatmap;
