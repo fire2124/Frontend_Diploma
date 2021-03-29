@@ -33,7 +33,7 @@ export const GeoPoints = ({ data }) => {
           break;
       }
     }
-  });
+  }, {});
 };
 
 

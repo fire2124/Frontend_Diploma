@@ -17,7 +17,8 @@ const Map = ({ data }) => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <GeoPoints data={data} />
+      {(data !== undefined) ?  <GeoPoints data={data} /> : null}
+     
       <ZoomControl position="bottomright" />
     </MapContainer>
   );

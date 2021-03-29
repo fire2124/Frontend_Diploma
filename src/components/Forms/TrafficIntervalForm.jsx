@@ -1,19 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import { useForm, useWatch } from "react-hook-form";
-import { Switch } from "./common/Switch";
-import { RadioButtons } from "./common/Radio";
-
-const SidePanelTitle = styled.h4`
-  font-family: Baloo 2;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 25px;
-  color: #7e7d7d;
-`;
-
+import { useForm } from "react-hook-form";
 
 const fields = [
     {
@@ -24,32 +11,30 @@ const fields = [
         value: "14-18",
     },
     {
-        label: "15min",
+        label: "15 minút",
         value: "15min",
     },
     {
-        label: "1hour",
+        label: "1 hodina",
         value: "1hour"
     },
     {
-        label: "3hours",
+        label: "3 hodiny",
         value: "3hours",
     },
     {
-        label: "1day",
+        label: "1 deň",
         value: "1day",
     },
     {
-        label: "1week",
+        label: "1 týždeň",
         value: "1week",
     },
     {
-        label: "1month",
+        label: "1 mesiac",
         value: "1month",
     },
 ];
-
-
 
 export const TrafficIntervalForm = ({ onChange }) => {
     const { register, handleSubmit } = useForm(
@@ -65,7 +50,7 @@ export const TrafficIntervalForm = ({ onChange }) => {
                 return (
                     <label key={i}>
                         <input name="interval" type="radio" ref={register} value={value} />{" "}
-                        {label}{" "}
+                        {label}{"  "}
                     </label>
                 );
             })}

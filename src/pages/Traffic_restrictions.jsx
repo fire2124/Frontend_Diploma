@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import MyMap from "../components/map/Map";
+
 import Heatmap from "../components/map/Heatmap";
 import { SidePanel } from "../components/SidePanel";
 import { getData } from "../services/Traffic";
@@ -6,7 +8,6 @@ import { Card } from "../components/Card";
 import { TrafficForm } from "../components/forms/TrafficForm";
 import { TrafficIntervalForm } from "../components/forms/TrafficIntervalForm";
 
-const defaultTrafficInterval = `15min`;
 
 const Traffic_restrictions = () => {
   const [trafficData, setTrafficData] = useState({});
@@ -14,7 +15,7 @@ const Traffic_restrictions = () => {
   const trafficIntervalFormChange = async (v) => {
     const res = await getData(v.interval);
     setTrafficData(res);
-    console.log(res.features);
+    //console.log(res.features);
   };
 
   return (
@@ -26,6 +27,8 @@ const Traffic_restrictions = () => {
         <div className="text_name py-5 px-5">Dopravné obmedzenia</div>
         <div className="map my-2">
           {/*<Heatmap data={trafficData.features} />*/}
+          <MyMap data={trafficData} />
+
         </div>
         <TrafficIntervalForm onChange={trafficIntervalFormChange} />
       </Card>

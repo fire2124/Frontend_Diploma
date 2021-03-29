@@ -1,0 +1,767 @@
+[
+    {
+        "currentStop": "Andreja Sládkoviča"
+    },
+    {
+        "currentStop": "Bajkalská"
+    },
+    {
+        "currentStop": "Bardejovská"
+    },
+    {
+        "currentStop": "Bikoš"
+    },
+    {
+        "currentStop": "Björnsonova"
+    },
+    {
+        "currentStop": "Bohúňova"
+    },
+    {
+        "currentStop": "Borkút"
+    },
+    {
+        "currentStop": "Budovateľská"
+    },
+    {
+        "currentStop": "Bzenov"
+    },
+    {
+        "currentStop": "Cemjata"
+    },
+    {
+        "currentStop": "Centrum"
+    },
+    {
+        "currentStop": "Centrál"
+    },
+    {
+        "currentStop": "Chalupkova"
+    },
+    {
+        "currentStop": "Chatky"
+    },
+    {
+        "currentStop": "Cintorín - Solivar"
+    },
+    {
+        "currentStop": "Clementisova"
+    },
+    {
+        "currentStop": "Delňa"
+    },
+    {
+        "currentStop": "Detská nemocnica"
+    },
+    {
+        "currentStop": "Dilongova"
+    },
+    {
+        "currentStop": "Divadlo Jonáša Záborského"
+    },
+    {
+        "currentStop": "Domašská"
+    },
+    {
+        "currentStop": "Dopravný podnik"
+    },
+    {
+        "currentStop": "Družstevná"
+    },
+    {
+        "currentStop": "Duchnovičovo námestie"
+    },
+    {
+        "currentStop": "Duklianska"
+    },
+    {
+        "currentStop": "Dúbrava"
+    },
+    {
+        "currentStop": "Dúbravská"
+    },
+    {
+        "currentStop": "Fakultná nemocnica"
+    },
+    {
+        "currentStop": "Fintice"
+    },
+    {
+        "currentStop": "Fintická"
+    },
+    {
+        "currentStop": "Floriánova"
+    },
+    {
+        "currentStop": "Gemor"
+    },
+    {
+        "currentStop": "Generálplukovníka Ambruša"
+    },
+    {
+        "currentStop": "Grešova"
+    },
+    {
+        "currentStop": "Gribľovec"
+    },
+    {
+        "currentStop": "Gymnázium sv. Moniky"
+    },
+    {
+        "currentStop": "Haniska"
+    },
+    {
+        "currentStop": "Herlianska"
+    },
+    {
+        "currentStop": "Hinrichs"
+    },
+    {
+        "currentStop": "Hobby park"
+    },
+    {
+        "currentStop": "Horárska"
+    },
+    {
+        "currentStop": "Hruny"
+    },
+    {
+        "currentStop": "Hulica"
+    },
+    {
+        "currentStop": "Husí hrb"
+    },
+    {
+        "currentStop": "Hviezdna"
+    },
+    {
+        "currentStop": "Hôrka"
+    },
+    {
+        "currentStop": "Ihrisko"
+    },
+    {
+        "currentStop": "Išľa"
+    },
+    {
+        "currentStop": "Jahodová"
+    },
+    {
+        "currentStop": "Jazdecká"
+    },
+    {
+        "currentStop": "Jelšová"
+    },
+    {
+        "currentStop": "Jesenná"
+    },
+    {
+        "currentStop": "Jilemnického"
+    },
+    {
+        "currentStop": "Jurkovičova"
+    },
+    {
+        "currentStop": "Jána Béreša"
+    },
+    {
+        "currentStop": "Jána Kostru"
+    },
+    {
+        "currentStop": "Jánošíkova"
+    },
+    {
+        "currentStop": "K Surdoku"
+    },
+    {
+        "currentStop": "Kalinčiakova"
+    },
+    {
+        "currentStop": "Kamence"
+    },
+    {
+        "currentStop": "Kamenná"
+    },
+    {
+        "currentStop": "Kamenná baňa"
+    },
+    {
+        "currentStop": "Kanaš - Stráže"
+    },
+    {
+        "currentStop": "Kapanoš"
+    },
+    {
+        "currentStop": "Kapitána Nálepku"
+    },
+    {
+        "currentStop": "Karpatská"
+    },
+    {
+        "currentStop": "Kollárova"
+    },
+    {
+        "currentStop": "Korabinského"
+    },
+    {
+        "currentStop": "Koryto"
+    },
+    {
+        "currentStop": "Kozí rožok"
+    },
+    {
+        "currentStop": "Košická"
+    },
+    {
+        "currentStop": "Ku Brezinám"
+    },
+    {
+        "currentStop": "Kukučínova"
+    },
+    {
+        "currentStop": "Kvašná voda"
+    },
+    {
+        "currentStop": "Kysucká"
+    },
+    {
+        "currentStop": "Kúpeľná"
+    },
+    {
+        "currentStop": "Kúty"
+    },
+    {
+        "currentStop": "LC Tesco"
+    },
+    {
+        "currentStop": "Labutia"
+    },
+    {
+        "currentStop": "Laca Novomeského"
+    },
+    {
+        "currentStop": "Lachôrka"
+    },
+    {
+        "currentStop": "Lemešianska"
+    },
+    {
+        "currentStop": "Lesnícka"
+    },
+    {
+        "currentStop": "Lesík delostrelcov"
+    },
+    {
+        "currentStop": "Levočská"
+    },
+    {
+        "currentStop": "Limbová"
+    },
+    {
+        "currentStop": "Logistické centrum"
+    },
+    {
+        "currentStop": "Lomnická"
+    },
+    {
+        "currentStop": "Malý Šariš"
+    },
+    {
+        "currentStop": "Marka Čulena"
+    },
+    {
+        "currentStop": "Martina Benku"
+    },
+    {
+        "currentStop": "Medulienka"
+    },
+    {
+        "currentStop": "Medzi jarkami"
+    },
+    {
+        "currentStop": "Mestská hala"
+    },
+    {
+        "currentStop": "Mičurinova"
+    },
+    {
+        "currentStop": "Moyzesova"
+    },
+    {
+        "currentStop": "Mukačevská"
+    },
+    {
+        "currentStop": "Múzeum Solivar"
+    },
+    {
+        "currentStop": "Mýto"
+    },
+    {
+        "currentStop": "Na Hlavnej"
+    },
+    {
+        "currentStop": "Na Kruhu"
+    },
+    {
+        "currentStop": "Na Rúrkach"
+    },
+    {
+        "currentStop": "Na Záhumní"
+    },
+    {
+        "currentStop": "Na brehu"
+    },
+    {
+        "currentStop": "Nižnianska"
+    },
+    {
+        "currentStop": "Nižná Šebastová"
+    },
+    {
+        "currentStop": "Nižné lúky"
+    },
+    {
+        "currentStop": "Nová"
+    },
+    {
+        "currentStop": "Nový Solivar"
+    },
+    {
+        "currentStop": "Nákupné stredisko"
+    },
+    {
+        "currentStop": "Námestie J. Kolarčíka"
+    },
+    {
+        "currentStop": "Námestie Kráľovnej pokoja"
+    },
+    {
+        "currentStop": "Námestie mládeže"
+    },
+    {
+        "currentStop": "Námestie sv. Jakuba"
+    },
+    {
+        "currentStop": "Obrancov mieru"
+    },
+    {
+        "currentStop": "OcÚ Bzenov"
+    },
+    {
+        "currentStop": "OcÚ Malý Šariš"
+    },
+    {
+        "currentStop": "OcÚ Teriakovce"
+    },
+    {
+        "currentStop": "OcÚ Vyšná Šebastová"
+    },
+    {
+        "currentStop": "Odborárska"
+    },
+    {
+        "currentStop": "Okružná"
+    },
+    {
+        "currentStop": "Októbrová"
+    },
+    {
+        "currentStop": "Ostrovček"
+    },
+    {
+        "currentStop": "Pavla Horova"
+    },
+    {
+        "currentStop": "Pavlovičovo námestie"
+    },
+    {
+        "currentStop": "Pažica"
+    },
+    {
+        "currentStop": "Pekárne"
+    },
+    {
+        "currentStop": "Petrovianska"
+    },
+    {
+        "currentStop": "Pionierska"
+    },
+    {
+        "currentStop": "Pivovar"
+    },
+    {
+        "currentStop": "Plachty"
+    },
+    {
+        "currentStop": "Plzenská"
+    },
+    {
+        "currentStop": "Pod Kalváriou"
+    },
+    {
+        "currentStop": "Pod Kamennou baňou"
+    },
+    {
+        "currentStop": "Pod Maglovcom"
+    },
+    {
+        "currentStop": "Pod Skalkou"
+    },
+    {
+        "currentStop": "Pod Táborom"
+    },
+    {
+        "currentStop": "Pod Wilec hôrkou"
+    },
+    {
+        "currentStop": "Pod kopaninou"
+    },
+    {
+        "currentStop": "Pod nadjazdom"
+    },
+    {
+        "currentStop": "Pod Šalgovíkom"
+    },
+    {
+        "currentStop": "Pod Šibeňou"
+    },
+    {
+        "currentStop": "Poliklinika"
+    },
+    {
+        "currentStop": "Potočná"
+    },
+    {
+        "currentStop": "Pred Surdokom"
+    },
+    {
+        "currentStop": "Prešovská univerzita"
+    },
+    {
+        "currentStop": "Pri kaplnke"
+    },
+    {
+        "currentStop": "Pri kostole"
+    },
+    {
+        "currentStop": "Pri lipe"
+    },
+    {
+        "currentStop": "Pri zámočku"
+    },
+    {
+        "currentStop": "Priecestie"
+    },
+    {
+        "currentStop": "Priemyselné centrum"
+    },
+    {
+        "currentStop": "Priemyselný park Záborské"
+    },
+    {
+        "currentStop": "Priečne"
+    },
+    {
+        "currentStop": "Prostějovská"
+    },
+    {
+        "currentStop": "Ruská Nová Ves"
+    },
+    {
+        "currentStop": "Rusínska"
+    },
+    {
+        "currentStop": "Rybníčky"
+    },
+    {
+        "currentStop": "Rázcestie Cemjata"
+    },
+    {
+        "currentStop": "Rázcestie Janov"
+    },
+    {
+        "currentStop": "Rázcestie Kanaš"
+    },
+    {
+        "currentStop": "Rázcestie Kúty"
+    },
+    {
+        "currentStop": "Rázcestie Malý Šariš"
+    },
+    {
+        "currentStop": "Rázcestie Rúrky"
+    },
+    {
+        "currentStop": "Rázcestie Teriakovce"
+    },
+    {
+        "currentStop": "Rázcestie Vyšná Šebastová"
+    },
+    {
+        "currentStop": "Rázcestie Záborské"
+    },
+    {
+        "currentStop": "Rázcestie Šidlovec"
+    },
+    {
+        "currentStop": "Sabinovská"
+    },
+    {
+        "currentStop": "Sekčovská"
+    },
+    {
+        "currentStop": "Severná"
+    },
+    {
+        "currentStop": "Severná - kostol"
+    },
+    {
+        "currentStop": "Sibírska"
+    },
+    {
+        "currentStop": "Slanská"
+    },
+    {
+        "currentStop": "Sládkovičova"
+    },
+    {
+        "currentStop": "Slávik"
+    },
+    {
+        "currentStop": "Slávičia"
+    },
+    {
+        "currentStop": "Solivar"
+    },
+    {
+        "currentStop": "Solivarská"
+    },
+    {
+        "currentStop": "Sordok"
+    },
+    {
+        "currentStop": "Soľnobanská"
+    },
+    {
+        "currentStop": "Spinea - Záturecká"
+    },
+    {
+        "currentStop": "Správa diaľníc"
+    },
+    {
+        "currentStop": "Staničná"
+    },
+    {
+        "currentStop": "Stará škola"
+    },
+    {
+        "currentStop": "Stavbárska"
+    },
+    {
+        "currentStop": "Stredná lesnícka škola"
+    },
+    {
+        "currentStop": "Strojnícka"
+    },
+    {
+        "currentStop": "Strážnická"
+    },
+    {
+        "currentStop": "Surdok"
+    },
+    {
+        "currentStop": "Suvorovova"
+    },
+    {
+        "currentStop": "Sázavského"
+    },
+    {
+        "currentStop": "Sídlisko III"
+    },
+    {
+        "currentStop": "Súľovská"
+    },
+    {
+        "currentStop": "Telekča"
+    },
+    {
+        "currentStop": "Terchovská"
+    },
+    {
+        "currentStop": "Teriakovce"
+    },
+    {
+        "currentStop": "Trojica"
+    },
+    {
+        "currentStop": "Tulčícka"
+    },
+    {
+        "currentStop": "V kopci"
+    },
+    {
+        "currentStop": "VUKOV"
+    },
+    {
+        "currentStop": "Vajanského"
+    },
+    {
+        "currentStop": "Valkovská"
+    },
+    {
+        "currentStop": "Vansovej"
+    },
+    {
+        "currentStop": "Varoš"
+    },
+    {
+        "currentStop": "Veselá"
+    },
+    {
+        "currentStop": "Veterinárna nemocnica"
+    },
+    {
+        "currentStop": "Veľká pošta"
+    },
+    {
+        "currentStop": "Veľký Šariš"
+    },
+    {
+        "currentStop": "Vodná"
+    },
+    {
+        "currentStop": "Vodárenská"
+    },
+    {
+        "currentStop": "Volgogradská"
+    },
+    {
+        "currentStop": "Vranovská"
+    },
+    {
+        "currentStop": "Vydumanec"
+    },
+    {
+        "currentStop": "Vyšná Šebastová"
+    },
+    {
+        "currentStop": "Vyšné lúky"
+    },
+    {
+        "currentStop": "Východná"
+    },
+    {
+        "currentStop": "Včelárska"
+    },
+    {
+        "currentStop": "Wilecova hôrka"
+    },
+    {
+        "currentStop": "ZVL"
+    },
+    {
+        "currentStop": "Za Kalváriou"
+    },
+    {
+        "currentStop": "Za Kútami"
+    },
+    {
+        "currentStop": "Za traťou"
+    },
+    {
+        "currentStop": "Zabíjaná"
+    },
+    {
+        "currentStop": "Zimný štadión"
+    },
+    {
+        "currentStop": "Záborské"
+    },
+    {
+        "currentStop": "Záborské - stred"
+    },
+    {
+        "currentStop": "Záhradky"
+    },
+    {
+        "currentStop": "Záhradkárska osada"
+    },
+    {
+        "currentStop": "ZŠ Odborárska"
+    },
+    {
+        "currentStop": "ZŠ Prostějovská"
+    },
+    {
+        "currentStop": "ZŠ Veľký Šariš"
+    },
+    {
+        "currentStop": "ZŠ Ľubotice"
+    },
+    {
+        "currentStop": "Čertov kameň"
+    },
+    {
+        "currentStop": "Červený mostík"
+    },
+    {
+        "currentStop": "Čierny most"
+    },
+    {
+        "currentStop": "Čistička"
+    },
+    {
+        "currentStop": "Ľubochnianska"
+    },
+    {
+        "currentStop": "Ľubotice"
+    },
+    {
+        "currentStop": "Šafárikova, cintorín"
+    },
+    {
+        "currentStop": "Šalgovícka"
+    },
+    {
+        "currentStop": "Šalgovík"
+    },
+    {
+        "currentStop": "Šariš park"
+    },
+    {
+        "currentStop": "Šarišské Lúky"
+    },
+    {
+        "currentStop": "Šebastovská"
+    },
+    {
+        "currentStop": "Šidlovec"
+    },
+    {
+        "currentStop": "Šidlovská"
+    },
+    {
+        "currentStop": "Širpo"
+    },
+    {
+        "currentStop": "Školské lesy"
+    },
+    {
+        "currentStop": "Škultétyho"
+    },
+    {
+        "currentStop": "Škára"
+    },
+    {
+        "currentStop": "Štúrova"
+    },
+    {
+        "currentStop": "Švábska"
+    },
+    {
+        "currentStop": "Šľachtiteľská stanica"
+    },
+    {
+        "currentStop": "Železničná stanica"
+    }
+]

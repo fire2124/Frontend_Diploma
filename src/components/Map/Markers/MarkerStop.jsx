@@ -3,9 +3,6 @@ import { Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { getMapIcon } from "./getIcon";
 
-//TODO: if you want cluster https://www.npmjs.com/package/react-leaflet-cluster
-
-
 export const returnMarkerStop = (obj, i)=> {
   return (
     <Marker

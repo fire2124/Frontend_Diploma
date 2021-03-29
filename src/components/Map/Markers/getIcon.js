@@ -1,4 +1,3 @@
-  
 import "leaflet/dist/leaflet.css";
 import { Icon } from "leaflet";
 const url = "../../img/";
@@ -26,11 +25,27 @@ const traffic = new Icon({
   iconUrl: `${url}/markers/traffic.png`,
   iconSize: iconSizeTraffic,
 });
+const traffic2 = new Icon({
+  iconUrl: `${url}/markers/traffic2.png`,
+  iconSize: iconSizeTraffic,
+});
+const traffic3 = new Icon({
+  iconUrl: `${url}/markers/traffic3.png`,
+  iconSize: iconSizeTraffic,
+});
+const traffic4 = new Icon({
+  iconUrl: `${url}/markers/traffic4.png`,
+  iconSize: iconSizeTraffic,
+});
+const traffic5 = new Icon({
+  iconUrl: `${url}/markers/traffic5.png`,
+  iconSize: iconSizeTraffic,
+});
 
-export const getMapIcon = (type) => {
+export const getMapIcon = (type,obj) => {
   switch (type) {
     case "Traffic":
-      return traffic;
+      return limeFunction(obj);
     case "Stop_Mhd":
       return mhd_stop;
     case "Stop_Sad":
@@ -41,3 +56,29 @@ export const getMapIcon = (type) => {
       break;
   }
 };
+
+function limeFunction(obj) {
+    if (
+      obj.properties.count_of_obstacles !== null &&
+      obj.properties.count_of_obstacles !== undefined
+    ) {
+      let obstacles = obj.properties.count_of_obstacles;
+      switch (obstacles) {
+        case 1:
+          return traffic;
+        case 2:
+          return traffic2;
+        case 3:
+          return traffic3;
+        case 4:
+          return traffic4;
+        case 5:
+          return traffic5;
+        default:
+          break;
+      }
+    } else {
+      return traffic;
+    }
+ 
+}
