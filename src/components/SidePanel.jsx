@@ -10,7 +10,7 @@ const buttonArrow = (isOpen) =>
     <div className="font-extrabold">{`>>`}</div>
   );
 
-const SidePanelTitle = styled.h4`
+const SidePanelTitle = styled.h3`
   font-family: Baloo 2;
   font-style: normal;
   font-weight: 500;

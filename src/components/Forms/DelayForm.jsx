@@ -59,7 +59,7 @@ const Description = React.memo(({ delay }) => (
 ));
 
 export const DelayForm = ({ onChange }) => {
-  const { register, watch, handleSubmit } = useForm({
+  const { register, watch, getValues } = useForm({
     defaultValues: {
       vehicle: "MHD",
       delay: "delay",
@@ -69,7 +69,7 @@ export const DelayForm = ({ onChange }) => {
   const delay = watch("delay");
 
   return (
-    <form onSubmit={handleSubmit(onChange)}>
+    <form onChange={() => onChange(getValues())}>
       <label>
         <input
           name="delay"
@@ -109,9 +109,6 @@ export const DelayForm = ({ onChange }) => {
           </label>
         );
       })}
-      <div className="pt-5">
-        <input type="submit" />
-      </div>
     </form>
   );
 };

@@ -38,13 +38,13 @@ const fields = [
 ];
 
 export const TrafficIntervalForm = ({ onChange }) => {
-  const { register, handleSubmit } = useForm({
+  const { register, getValues } = useForm({
     defaultValues: {
       interval: fields[3].value,
     },
   });
   return (
-    <form onSubmit={handleSubmit(onChange)}>
+    <form onChange={() => onChange(getValues())}>
       {fields.map(({ label, value }, i) => {
         return (
             <label key={i} className="px-5">
@@ -59,9 +59,6 @@ export const TrafficIntervalForm = ({ onChange }) => {
             </label>
         );
       })}
-      <div className="pt-5">
-        <input type="submit" />
-      </div>
     </form>
   );
 };

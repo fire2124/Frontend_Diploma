@@ -20,7 +20,8 @@ const Ul = styled.ul`
   }
 `;
 
-const Text = styled.text`
+
+const Text = styled.div`
   font-family: Baloo 2;
   font-style: normal;
   font-weight: normal;
@@ -37,7 +38,7 @@ const Text = styled.text`
   }
 `;
 
-const Text2 = styled.text`
+const Text2 = styled.p`
   font-family: Baloo 2;
   font-style: normal;
   font-size: 16px;
@@ -95,7 +96,7 @@ const RightNav = ({ open }) => {
               to={to}
               className="text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
             >
-              <Text>{label}</Text>
+              {label}
             </Link>
           </li>
         );

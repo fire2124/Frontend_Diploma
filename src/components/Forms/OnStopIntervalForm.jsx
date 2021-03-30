@@ -29,33 +29,34 @@ const fields = [
   },
 ];
 
+
+export const IntervalFormFields = ({register}) => fields.map(({ label, value }, i) => {
+  return (
+    <div className="pt-5" key={i}>
+      <label>
+        <input
+          name="interval"
+          type="radio"
+          ref={register}
+          value={value}
+        />{" "}
+        {label}
+        {"  "}
+      </label>
+    </div>
+  );
+})
+
+
 export const OnStopIntervalForm = ({ onChange }) => {
-  const { register, handleSubmit } = useForm({
+  const { register, getValues } = useForm({
     defaultValues: {
       interval: fields[3].value,
     },
   });
   return (
-    <form onSubmit={handleSubmit(onChange)} className="pt-5">
-      {fields.map(({ label, value }, i) => {
-        return (
-          <div className="pt-5">
-            <label key={i} >
-              <input
-                name="interval"
-                type="radio"
-                ref={register}
-                value={value}
-              />{" "}
-              {label}
-              {"  "}
-            </label>
-          </div>
-        );
-      })}
-      <div className="pt-5">
-        <input type="submit" />
-      </div>
+    <form onChange={() => onChange(getValues())} className="pt-5">
+      <IntervalFormFields register={register}/>
     </form>
   );
 };

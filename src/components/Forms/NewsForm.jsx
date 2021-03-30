@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useForm, useWatch } from "react-hook-form";
 import styled from "styled-components";
 
-const Text = styled.text`
+const Label = styled.div`
   font-family: Baloo 2;
   font-style: normal;
   font-weight: normal;
@@ -46,23 +46,18 @@ const fields = [
 
 
 export const NewsForm = ({onChange}) => {
-  const { register, control, handleSubmit} = useForm();
+  const { register, getValues} = useForm();
 
   return (
-  <form onSubmit={handleSubmit(onChange)}>
+  <form onChange={() => onChange(getValues())}>
     {/* register your input into the hook by invoking the "register" function */}
     {fields.map(({ name, label }, i) => {
-      return (
-        <div className="pt-2" key={i}>
-          <label >
+      return ( <Label as={`label`} className="pt-2 block" key={i} >
             <input type="checkbox" name={name} ref={register}/>
-            {" "}<Text>{label}</Text>
-          </label>
-        </div>
+            {" "}{label}
+          </Label>
       );
     })}
-
-    <input type="submit" />
   </form>
   );
 }

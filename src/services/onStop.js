@@ -4,7 +4,7 @@ import {
 } from "../services/AggregationsServices";
 
 export const getData = async (type, item, interval) => {
-  if (type === "vehicles")
+  if (type === "selectBus")
     return await getTimeOnStopsByCurrentBus(item, getTimeInterval(interval));
   else return await getTimeOnCurrentStop(item, getTimeInterval(interval));
 };
@@ -58,37 +58,3 @@ function getTimeInterval(interval) {
        break;
   }
 }
-
-// const handleGetTimeOnCurrentStop = async (v) => {
-  //   let hours = 0;
-  //   let minutes = 0;
-  //   let sec = 0;
-  //   let week = 0;
-  //   let day = 1;
-  //   let currentStop = "Prešov,,AS ";
-  //   let res = await getTimeOnCurrentStop(currentStop, {
-  //     week,
-  //     day,
-  //     hours,
-  //     minutes,
-  //     sec,
-  //   });
-  //   console.log(res);
-  // };
-
-  // const handleGetTimeOnStopsByCurrentBus = async (v) => {
-  //   let hours = 0;
-  //   let minutes = 0;
-  //   let sec = 0;
-  //   let week = 0;
-  //   let day = 1;
-  //   let ROUTE_NUMBER = `701402`;
-  //   let res = await getTimeOnStopsByCurrentBus(ROUTE_NUMBER, {
-  //     week,
-  //     day,
-  //     hours,
-  //     minutes,
-  //     sec,
-  //   });
-  //   console.log(res);
-  // };
