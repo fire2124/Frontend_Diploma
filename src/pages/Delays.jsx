@@ -39,7 +39,7 @@ const Delays = () => {
           <div className="map my-2">
           <Heatmap data={data.features} />
           </div>
-          <div className=""> {/*tTop*/}
+          <div className="tTop"> {/*tTop*/}
             <TrafficIntervalForm onChange={trafficIntervalFormChange} />
           </div>
         </div>

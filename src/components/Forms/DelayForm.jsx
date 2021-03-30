@@ -2,8 +2,31 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useForm, useWatch } from "react-hook-form";
-import { Switch } from "./common/Switch";
-import { RadioButtons } from "./common/Radio";
+
+const SwitchText = styled.text`
+  font-family: Baloo 2;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #aeaeae;
+  text-decoration: none;
+  &:hover {
+    color: #7e7bff;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #7e7bff;
+  }
+`;
+const Text = styled.text`
+  font-family: Baloo 2;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #7e7d7d;
+`;
 
 const SidePanelTitle = styled.h4`
   font-family: Baloo 2;
@@ -20,7 +43,7 @@ const fields = [
   },
   {
     label: "SAD",
-    value: "SAD"
+    value: "SAD",
   },
   {
     label: "Vlaky",
@@ -28,41 +51,55 @@ const fields = [
   },
 ];
 
-const description1 = `Táto heatmapa zobrazuje naakumulované meškanie spojov za určité časové obdobie`
-const description2 = `Táto heatmapa zobrazuje, kde konkrétne vozidlá vytvárajú meškanie`
+const description1 = <Text>Táto heatmapa zobrazuje naakumulované meškanie spojov za určité časové obdobie</Text>
+const description2 = <Text>Táto heatmapa zobrazuje, kde konkrétne vozidlá vytvárajú meškanie</Text>
 
-const Description = React.memo(({ delay }) => <p>
-  {delay === `delay` ? description1 : description2}
-</p>
-)
+const Description = React.memo(({ delay }) => (
+  <p>{delay === `delay` ? description1 : description2}</p>
+));
 
 export const DelayForm = ({ onChange }) => {
-  const { register, watch, handleSubmit } = useForm(
-    {
-      defaultValues: {
-        vehicle: 'MHD',
-        delay: 'delay'
-      }
-    }
-  )
+  const { register, watch, handleSubmit } = useForm({
+    defaultValues: {
+      vehicle: "MHD",
+      delay: "delay",
+    },
+  });
 
-  const delay = watch('delay')
+  const delay = watch("delay");
 
   return (
     <form onSubmit={handleSubmit(onChange)}>
       <label>
-        <input name="delay" type="radio" ref={register} value="delay" className="hidden" />
-        Meškanie
+        <input
+          name="delay"
+          type="radio"
+          ref={register}
+          value="delay"
+          className="hidden"
+        />
+        <SwitchText>Meškanie</SwitchText>
       </label>
       {" | "}
       <label>
-        <input name="delay" type="radio" ref={register} value="delayChange" className="hidden" />
-        Vytváranie meškaní
+        <input
+          name="delay"
+          type="radio"
+          ref={register}
+          value="delayChange"
+          className="hidden"
+        />
+        <SwitchText>Vytváranie meškaní</SwitchText>
       </label>
+      <div className="pt-5">
+        <SidePanelTitle>Čo popisuje daná heatmapa?</SidePanelTitle>
+      </div>
       <Description delay={delay} />
-      <SidePanelTitle className="pt-5">
-        Vyberte typ dopravného prostriedku, na ktorom chcete zistiť meškanie
-      </SidePanelTitle>
+      <div className="pt-5">
+        <SidePanelTitle>
+          Vyberte typ dopravného prostriedku, na ktorom chcete zistiť meškanie
+        </SidePanelTitle>
+      </div>
 
       {fields.map(({ label, value }, i) => {
         return (
@@ -75,7 +112,6 @@ export const DelayForm = ({ onChange }) => {
       <div className="pt-5">
         <input type="submit" />
       </div>
-
     </form>
   );
 };

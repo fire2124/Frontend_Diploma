@@ -78,7 +78,15 @@ input[type="checkbox"] {
   filter: invert(0%) brightness(1) hue-rotate(75deg);
 }
 
+input[type="radio"] {
+  filter: invert(0%) brightness(1) hue-rotate(75deg);
+}
+
 .tTop {
   padding-top: 40rem;
   padding-bottom: 40rem;
+}
+
+.tSide {
+  padding-right: 2rem;
 }

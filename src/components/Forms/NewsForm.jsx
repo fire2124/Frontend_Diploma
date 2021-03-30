@@ -1,6 +1,16 @@
 import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 import { useForm, useWatch } from "react-hook-form";
+import styled from "styled-components";
+
+const Text = styled.text`
+  font-family: Baloo 2;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #7e7d7d;
+`;
 
 const fields = [
   {
@@ -46,7 +56,7 @@ export const NewsForm = ({onChange}) => {
         <div className="pt-2" key={i}>
           <label >
             <input type="checkbox" name={name} ref={register}/>
-            {" "}{label}
+            {" "}<Text>{label}</Text>
           </label>
         </div>
       );

@@ -20,6 +20,36 @@ const Ul = styled.ul`
   }
 `;
 
+const Text = styled.text`
+  font-family: Baloo 2;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #aeaeae;
+  text-decoration: none;
+  &:hover {
+    color: #7e7bff;
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-color: #7e7bff;
+  }
+`;
+
+const Text2 = styled.text`
+  font-family: Baloo 2;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 25px;
+  text-decoration: none;
+  color: #7e7bff;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #7e7bff;
+`;
+
 const navbarValues = [
   {
     to: "/",
@@ -49,6 +79,7 @@ const navbarValues = [
 
 const RightNav = ({ open }) => {
   // TODo fix padding of links
+
   return (
     <Ul
       open={open}
@@ -62,9 +93,9 @@ const RightNav = ({ open }) => {
           <li key={i}>
             <Link
               to={to}
-              className="hover:underline text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
+              className="text-xl md:text-base sm:text-base text-center justify-center xl:px-10 lg:px-10 inline-block pt-8"
             >
-              {label}
+              <Text>{label}</Text>
             </Link>
           </li>
         );

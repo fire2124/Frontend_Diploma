@@ -8,14 +8,12 @@ import { Card } from "../components/Card";
 import { TrafficForm } from "../components/forms/TrafficForm";
 import { TrafficIntervalForm } from "../components/forms/TrafficIntervalForm";
 
-
 const Traffic_restrictions = () => {
   const [trafficData, setTrafficData] = useState({});
 
   const trafficIntervalFormChange = async (v) => {
     const res = await getData(v.interval);
     setTrafficData(res);
-    //console.log(res.features);
   };
 
   return (
@@ -26,11 +24,11 @@ const Traffic_restrictions = () => {
       <Card className="mr-20 flex flex-grow">
         <div className="text_name py-5 px-5">Dopravné obmedzenia</div>
         <div className="map my-2">
-          {/*<Heatmap data={trafficData.features} />*/}
           <MyMap data={trafficData} />
-
         </div>
-        <TrafficIntervalForm onChange={trafficIntervalFormChange} />
+        <div className="tTop">
+          <TrafficIntervalForm onChange={trafficIntervalFormChange} />
+        </div>
       </Card>
     </div>
   );
