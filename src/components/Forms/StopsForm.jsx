@@ -80,14 +80,12 @@ const getItemsVehicleTypeId = (select, vehicleType) => {
         return select === `selectStop` ? mapItems(sadStops) : mapItems(sadVehicles)
       default:
         throw new Error("Uknown type of transportation.")
-        break;
     }
 }
 
 
 
 export const StopForm = ({ onChange }) => {
- 
   const { register, watch, getValues } = useForm({
     defaultValues: {
       select: "selectStop",
