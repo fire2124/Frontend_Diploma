@@ -10,7 +10,7 @@ const Map = ({ data }) => {
     <MapContainer
       center={position}
       zoom={10}
-      style={{maxHeight: `69vh`}}
+      style={{maxHeight: `55vh`}}
       className="rounded-lg control mt-5"
       scrollWheelZoom={true}
     >

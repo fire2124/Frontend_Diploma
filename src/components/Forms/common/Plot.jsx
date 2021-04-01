@@ -1,7 +1,7 @@
 import React from "react";
 import Plot from "react-plotly.js";
 import { Bar } from "@reactchartjs/react-chart.js";
-
+import StatLegend from '../../StatLegend'
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
@@ -48,14 +48,10 @@ export const MyPlot = (data) => {
     return TimeOnStopsByCurrentBuss(values);
   }
   return (
-    <Bar />
-    // <Plot
-    //   layout={{
-    //     width: 914,
-    //     height: 450,
-    //     showlegend: false,
-    //   }}
-    // />
+    <div>
+      <Bar />
+    </div>
+    
   );
 };
 
@@ -94,25 +90,12 @@ const isOnStop = (values) => {
     },
   };
 
-  return <Bar data={data} options={options} />;
-  // return (
-  //   <Plot
-  //     data={[
-  //       {
-  //         x: x,
-  //         y: y,
-  //         type: "bar",
-  //         marker: { color: "#7E7BFF" },
-  //         showlegend: false,
-  //       },
-  //     ]}
-  //     layout={{
-  //       width: 914,
-  //       height: 450,
-  //       showlegend: false,
-  //     }}
-  //   />
-  // );
+  return  <div>
+    <Bar data={data} options={options} />;
+  </div>
+  
+  
+
 };
 
 const TimeOnStopsByCurrentBuss = (values) => {
@@ -186,10 +169,16 @@ const TimeOnStopsByCurrentBuss = (values) => {
     },
   };
 
+  const stats = output.map(({stop,borderColor}) => {
+    return [``, stop, borderColor]
+  })
+
+
   return (
     <div>
       <Bar data={data} options={options} />
-      {JSON.stringify(output)}
+      <StatLegend stats={stats}/>
+      {JSON.stringify(output, 2)}
     </div>
   );
 };

@@ -4,50 +4,55 @@ import styled from "styled-components";
 import { Card } from "./Card";
 import { Title} from "./Title";
 
-
-
-const buttonArrow = (isOpen) => isOpen ? `<<` : `>>`
-
-const InsideWrapper = styled(Card)`
-  border-radius: 0px 24px 0px 0px;
-  display: flex;
+const InsideWrapper = styled.div`
   overflow: hidden;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
 `;
 
-const OutsideWrapper = styled.div`
-  transition: max-width ease-in-out 1s;
-  will-change: max-width;
-  max-width: ${(props) => (props.isOpen ? "355px" : "47px")};
+const OutsideWrapper = styled(Card)`
+  display: flex;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
   white-space: nowrap;
+  flex-shrink: 2;
+  margin-right: 5rem;
+  will-change: max-width;
+  transition: max-width ease 1.2s;
+  
+  max-width: ${(props) => (props.isOpen ? "100%" : 0)}; 
 `;
 
 const ToggleButton = styled.div`
+  display: flex;
   position: relative;
   color: #7e7bff;
   height: 100%;
+  outline: none;
+  font-weight: bold;
+  &:focus {
+    outline: none;
+  }
+  transition: transform ease 1.2s ;
+  transform-style: preserve-3d;
+  transform: ${(props) => (props.isOpen ? "none" : 'rotateY(180deg)')};
 `;
 
 export const SidePanel = ({ children, title }) => {
   const [isOpen, setIsOpen] = useState(true);
   return (
-    <OutsideWrapper className="flex-1 pr-20" isOpen={isOpen}>
-      <InsideWrapper isOpen={isOpen}>
-        <div>
+    <OutsideWrapper isOpen={isOpen}>
+      <InsideWrapper>
           {title && <Title as={`h3`}>{title}</Title>}
           {children}
-        </div>
-        <div className={`pt-5 pl-5`}>
-        <ToggleButton
-          as={`button`}
-          className="font-extrabold"
-          onClick={() => setIsOpen(!isOpen)}
-          >
-          {buttonArrow(isOpen)}
-        </ToggleButton>
-        </div>
       </InsideWrapper>
-        
+        <ToggleButton
+          as={`button`}     
+          onClick={() => setIsOpen(!isOpen)}
+          isOpen={isOpen}
+          >
+          {`<<`}
+        </ToggleButton>
     </OutsideWrapper>
   );
 };

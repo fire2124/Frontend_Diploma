@@ -6,7 +6,8 @@ import { getData } from "../services/onStop";
 import { MyPlot } from "../components/forms/common/Plot";
 import { Statistics } from "../components/forms/common/Statistics";
 import styled from "styled-components";
-
+import { Scafolding } from "../components/Scafolding"
+import { Title } from "../components/Title"
 
 const Container = styled.div`
   align-items: center;
@@ -28,7 +29,6 @@ export const Occupancy_of_Stops = () => {
   const [data, setData] = useState({});
 
   const buttonFormChange = async (formData) => {
-    //console.log(formData);
     const res = await getData(
       formData.select,
       formData.vehicleTypeId,
@@ -38,19 +38,20 @@ export const Occupancy_of_Stops = () => {
   };
 
   return (
-    <Container>
-      <SidePanel className="pr-2">
-        <StopForm onChange={buttonFormChange} />
-      </SidePanel>{" "}
-      <Card className="mr-20 flex flex-grow">
-        <div className="text_name py-5 px-5">Vyťaženosť zastávok</div>
+     <Scafolding sidePanelTitle={"Filter zobrazenia"} sidePanelContent={<StopForm onChange={buttonFormChange} />}>
+     
+     
+     <div className="flex-column flex-grow pr-20">
+      <Card className="flex-column flex-grow">
+        <Title as={`h1`}>Vyťaženosť zastávok</Title>
         <MyPlot data={data} />
       </Card>
-      <Card>
-        <SidePanelTitle> Štatistika</SidePanelTitle>
-        <Statistics data={data}></Statistics>
+      <Card className="flex-column flex-grow mt-20">
+        <Title as={`h2`}>Štatistiky</Title>
+        <Statistics data={data}/>
       </Card>
-    </Container>
+     </div>
+   </Scafolding>
   );
 };
 
