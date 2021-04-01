@@ -13,19 +13,28 @@ import "./assets/main.css";
 import { GlobalStyle } from "./GlobalStyles";
 import  { firebaseInitialze }  from "./services/firebase";
 import  {sentry}  from "./services/sentry";
+import styled from "styled-components";
 
 //firebaseInitialze()
 //sentry();
 
 //Todo: navbar change of pages
+
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  padding: 5rem 0;
+  flex: 1;
+`
+
 class App extends Component {
   render() {
     return (
       <React.Fragment>
         <Router>
-          <div className="min-h-screen">
             <GlobalStyle />
             <NavBar />
+            <Container>
               <Switch>
                 <Route exact path="/">
                   <News />
@@ -46,7 +55,7 @@ class App extends Component {
                   <Statistics />
                 </Route> */}
               </Switch>
-          </div>
+            </Container>
         </Router>
       </React.Fragment>
     );

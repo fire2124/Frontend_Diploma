@@ -65,14 +65,14 @@
   line-height: 25px;
   color: #7e7d7d;
 }
-.map {
+/* .map {
   position: absolute;
   border-radius: 8px;
   width: 914px;
   height: 605px;
   left: 438px;
   top: 207px;
-}
+} */
 
 input[type="checkbox"] {
   filter: invert(0%) brightness(1) hue-rotate(75deg);

@@ -3,24 +3,24 @@ import { MapContainer, TileLayer, ZoomControl } from "react-leaflet";
 import { GeoPoints } from "./GeoPoints";
 import "leaflet/dist/leaflet.css";
 
+const position = [48.99, 21.244];
+
 const Map = ({ data }) => {
-  const position = [48.99, 21.244];
   return (
     <MapContainer
       center={position}
       zoom={10}
-      style={{ height: "95%", width: "150%" }}
-      className="rounded-tr-lg rounded-tl-lg rounded-bl-lg rounded-br-lg control"
+      style={{maxHeight: `69vh`}}
+      className="rounded-lg control mt-5"
       scrollWheelZoom={true}
     >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {(data !== undefined) ?  <GeoPoints data={data} /> : null}
-     
+      {(data !== undefined) ?  <GeoPoints data={data} /> : null}    
       <ZoomControl position="bottomright" />
     </MapContainer>
   );
 };
-export default Map;
+export default React.memo(Map);

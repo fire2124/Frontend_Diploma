@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Burger from "./Burger";
-import Logo from "../../images/PO-TOK-Logo.png";
+import Logo from "../../images/logo.svg";
 
 
 const Nav = styled.nav`
@@ -16,7 +16,7 @@ const Nav = styled.nav`
 
 const Navbar = () => {
   return (
-    <Nav className="allWidth px-5">
+    <Nav className="px-5">
       <a href="/" >
         <img
           src={Logo}

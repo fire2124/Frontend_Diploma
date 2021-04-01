@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import MyMap from "../components/map/Map";
-
 import Heatmap from "../components/map/Heatmap";
 import { SidePanel } from "../components/SidePanel";
 import { getData } from "../services/Traffic";
 import { Card } from "../components/Card";
 import { TrafficForm } from "../components/forms/TrafficForm";
 import { TrafficIntervalForm } from "../components/forms/TrafficIntervalForm";
+import styled from "styled-components";
+import { Scafolding } from "../components/Scafolding"
+import { Title } from "../components/Title"
 
 const Traffic_restrictions = () => {
   const [trafficData, setTrafficData] = useState({});
@@ -16,21 +18,13 @@ const Traffic_restrictions = () => {
     setTrafficData(res);
   };
 
-  return (
-    <div className="flex my-20 h-full">
-      <SidePanel title={"Podrobnosti"} className="pr-2">
-        <TrafficForm />
-      </SidePanel>{" "}
-      <Card className="mr-20 flex flex-grow">
-        <div className="text_name py-5 px-5">Dopravné obmedzenia</div>
-        <div className="map my-2">
-          <MyMap data={trafficData} />
-        </div>
-        <div className="tTop">
-          <TrafficIntervalForm onChange={trafficIntervalFormChange} />
-        </div>
+  return (<Scafolding sidePanelTitle={"Podrobnosti"} >
+      <Card className="mr-20 flex-column flex-grow p-5">
+        <Title as={`h1`}>Dopravné obmedzenia</Title>
+        <MyMap data={trafficData} />
+        <TrafficIntervalForm onChange={trafficIntervalFormChange} />
       </Card>
-    </div>
+    </Scafolding>
   );
 };
 

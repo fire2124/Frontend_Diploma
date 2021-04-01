@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { getData } from "../services/News";
 import MyMap from "../components/map/Map";
-import { SidePanel } from "../components/SidePanel";
+import { Scafolding } from "../components/Scafolding"
 import { NewsForm } from "../components/forms/NewsForm";
 import { Card } from "../components/Card";
 import { useInterval } from "../services/useInterval"
+import { Title } from "../components/Title"
+
 
 const initState = {
   mhdPresov: null,
@@ -18,39 +20,33 @@ const initState = {
 
 const DATA_REFRESH_INTERVAL = 15000
 
+
 const News = () => {
   const [state, setState] = useState(initState)
   const [latestVal, setLatestVal] = useState({})
-  
-  const formChange = async(values) => {
+
+  const formChange = async (values) => {
     setLatestVal(values)
     await handleDownload(values)
-  } 
+  }
 
   const handleDownload = async (values) => {
     const response = await getData(values);
     setState(response);
   }
-  
+
   useInterval(async () => {
     handleDownload(latestVal)
   }, DATA_REFRESH_INTERVAL)
 
   return (
-      <div className="flex my-20 h-full">
-        <SidePanel title={"Filter zobrazenia"} className="pr-2">
-          <NewsForm onChange={formChange} />
-        </SidePanel>
-        <Card className="mr-20 flex flex-grow">
-          <div className="text_name py-5 px-5">
-            Aktuálne dopravné informácie
-          </div>
-          <div className="map my-2">
-            <MyMap data={state} />
-          </div>
-        </Card>
-      </div>
-    );
+    <Scafolding sidePanelTitle={"Filter zobrazenia"} sidePanelContent={<NewsForm onChange={formChange} />}>
+      <Card className="mr-20 flex-column flex-grow p-5">
+        <Title as={`h1`}>Aktuálne dopravné informácie</Title>
+        <MyMap data={state} />
+      </Card>
+    </Scafolding>
+  );
 }
 
 export default News;

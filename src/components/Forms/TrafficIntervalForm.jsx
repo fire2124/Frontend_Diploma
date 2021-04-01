@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
+import styled from "styled-components";
 
 const fields = [
   {
@@ -37,6 +38,18 @@ const fields = [
   },
 ];
 
+
+const Label = styled.div`
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  &:hover{
+    cursor: pointer;
+  }
+  input:checked + & {
+    border-top: 0.75rem solid #7e7bff;
+  }
+`
+
 export const TrafficIntervalForm = ({ onChange }) => {
   const { register, getValues } = useForm({
     defaultValues: {
@@ -44,19 +57,24 @@ export const TrafficIntervalForm = ({ onChange }) => {
     },
   });
   return (
-    <form onChange={() => onChange(getValues())}>
+    <form onChange={() => onChange(getValues())} className={`mt-5 pt-5 mx-auto text-center`}>
       {fields.map(({ label, value }, i) => {
         return (
-            <label key={i} className="px-5">
-              <input
+            <>
+                <input
                 name="interval"
                 type="radio"
                 ref={register}
                 value={value}
-              />{" "}
+                id={i}
+                style={{visibility:'hidden'}}
+              />
+            <Label as={`label`} key={i} for={i}>
+     
               {label}
-              {"  "}
-            </label>
+       
+            </Label>
+          </>
         );
       })}
     </form>
