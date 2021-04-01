@@ -11,21 +11,24 @@ const SidePanelText = styled.div`
   flex: 1;
   display: flex;
   strong {
-    color: ${(props) => (props.color ? `${props.color}` : `#7e7bff`)}; 
+    color: ${(props) => (props.color ? `${props.color}` : `black`)};
   }
 `;
 
-const StatLegend = ({stats}) => {
-    return stats.length > 0 ? 
+const StatLegend = ({ stats }) => {
+  return stats.length > 0 ? (
     <div className="flex">
-    {
-      stats.map(([label, val, color], key) => <SidePanelText key={key} color={color}>{label} <strong>{val}</strong></SidePanelText>)
-    }
+      {stats.map(([label, value, color, borderColor], key) => (
+        <SidePanelText key={key}>
+          {label} 
+          {/* <strong>{val}</strong> */}
+           <svg width="100" height="100">
+            <rect x="50" width="20" height="20" style={{fill:color}}/>
+          </svg> 
+        </SidePanelText>
+      ))}
     </div>
-    : null
-}
+  ) : null;
+};
 
-
-
-
-export default React.memo(StatLegend)
+export default React.memo(StatLegend);

@@ -39,8 +39,6 @@ export const Occupancy_of_Stops = () => {
 
   return (
      <Scafolding sidePanelTitle={"Filter zobrazenia"} sidePanelContent={<StopForm onChange={buttonFormChange} />}>
-     
-     
      <div className="flex-column flex-grow pr-20">
       <Card className="flex-column flex-grow">
         <Title as={`h1`}>Vyťaženosť zastávok</Title>

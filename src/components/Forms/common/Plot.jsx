@@ -1,5 +1,4 @@
 import React from "react";
-import Plot from "react-plotly.js";
 import { Bar } from "@reactchartjs/react-chart.js";
 import StatLegend from '../../StatLegend'
 const getRandomInt = (max) => {
@@ -169,15 +168,15 @@ const TimeOnStopsByCurrentBuss = (values) => {
     },
   };
 
-  const stats = output.map(({stop,borderColor}) => {
-    return [``, stop, borderColor]
-  })
+  // const stats = output.map(({stop,borderColor,color}) => {
+  //   return [``, stop, borderColor,color]
+  // })
 
 
   return (
     <div>
       <Bar data={data} options={options} />
-      <StatLegend stats={stats}/>
+      <StatLegend stats={output}/>
       {JSON.stringify(output, 2)}
     </div>
   );
