@@ -19,8 +19,7 @@ const OutsideWrapper = styled(Card)`
   margin-right: 5rem;
   will-change: max-width;
   transition: max-width ease 1.2s;
-  
-  max-width: ${(props) => (props.isOpen ? "100%" : 0)}; 
+  max-width: ${(props) => (props.isOpen ? "15%" : 0)}; 
 `;
 
 const ToggleButton = styled.div`

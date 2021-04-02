@@ -41,7 +41,7 @@ const TimeOnStopsByCurrentBuss = (values) => {
     }, []);
 
     filteredZ.map((e) => {
-      let color = getRandomColor(0.2);
+      let color = getRandomColor(0.8);
       let borderColor = getRandomColor(0.5);
       output.push({ stop: e, color: color, borderColor: borderColor });
     });

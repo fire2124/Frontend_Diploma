@@ -3,8 +3,10 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import "leaflet.heat";
 
+
+const position = [48.99, 21.244];
+
 const Heatmap = ({ data }) => {
-  const position = [48.99, 21.244];
   let finalData = [];
   if (data !== undefined) {
     try {
@@ -15,15 +17,15 @@ const Heatmap = ({ data }) => {
         array.push(e.properties.sum);
         finalData.push(array);
       });
-      console.log(finalData);
     } catch (error) {}
   }
 
   useEffect(() => {
-    let container = L.DomUtil.get("#map");
+    let container = L.DomUtil.get("map");
     if (container != null) {
       container._leaflet_id = null;
     }
+  
     let map = L.map("map").setView(position, 12);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -45,7 +47,7 @@ const Heatmap = ({ data }) => {
       scrollWheelZoom="true"
       dragging="true"
       className="rounded-tr-lg rounded-tl-lg rounded-bl-lg rounded-br-lg control"
-      style={{ height: "95%", width: "150%" }}
+      style={{ height: "100%", width: "100%" }}
     ></div>
   );
 };

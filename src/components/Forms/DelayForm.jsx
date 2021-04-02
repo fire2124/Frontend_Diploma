@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
-const SwitchText = styled.text`
+const SwitchText = styled.span`
   font-family: Baloo 2;
   font-style: normal;
   font-weight: normal;
@@ -19,22 +19,19 @@ const SwitchText = styled.text`
     text-decoration-color: #7e7bff;
   }
 `;
-const Text = styled.text`
+const Text = styled.p`
   font-family: Baloo 2;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 25px;
   color: #7e7d7d;
+  margin-top: 1.25rem;
+  white-space: initial;
 `;
 
-const SidePanelTitle = styled.h4`
-  font-family: Baloo 2;
-  font-style: normal;
+const SidePanelTitle = styled(Text)`
   font-weight: 500;
-  font-size: 16px;
-  line-height: 25px;
-  color: #7e7d7d;
 `;
 const fields = [
   {
@@ -51,11 +48,11 @@ const fields = [
   },
 ];
 
-const description1 = <Text>Táto heatmapa zobrazuje naakumulované meškanie spojov za určité časové obdobie</Text>
-const description2 = <Text>Táto heatmapa zobrazuje, kde konkrétne vozidlá vytvárajú meškanie</Text>
+const description1 = `Táto heatmapa zobrazuje naakumulované meškanie spojov za určité časové obdobie`
+const description2 = `Táto heatmapa zobrazuje, kde konkrétne vozidlá vytvárajú meškanie`
 
 const Description = React.memo(({ delay }) => (
-  <p>{delay === `delay` ? description1 : description2}</p>
+  <Text>{delay === `delay` ? description1 : description2}</Text>
 ));
 
 export const DelayForm = ({ onChange }) => {
@@ -91,16 +88,11 @@ export const DelayForm = ({ onChange }) => {
         />
         <SwitchText>Vytváranie meškaní</SwitchText>
       </label>
-      <div className="pt-5">
-        <SidePanelTitle>Čo popisuje daná heatmapa?</SidePanelTitle>
-      </div>
+      <SidePanelTitle as={`h4`}>Čo popisuje daná heatmapa?</SidePanelTitle>
       <Description delay={delay} />
-      <div className="pt-5">
-        <SidePanelTitle>
-          Vyberte typ dopravného prostriedku, na ktorom chcete zistiť meškanie
-        </SidePanelTitle>
-      </div>
-
+      <SidePanelTitle as={`h4`}>
+        Vyberte typ dopravného prostriedku, na ktorom chcete zistiť meškanie
+      </SidePanelTitle>
       {fields.map(({ label, value }, i) => {
         return (
           <label key={i}>

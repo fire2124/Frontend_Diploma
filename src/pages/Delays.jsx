@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SidePanel } from "../components/SidePanel";
 import { DelayForm } from "../components/forms/DelayForm";
 import { Card } from "../components/Card";
 import Heatmap from "../components/map/Heatmap";
@@ -39,7 +38,7 @@ const Delays = () => {
     <Scafolding sidePanelTitle={"Filter zobrazenia"} sidePanelContent={<DelayForm onChange={delayFormChange} />}>
     <Card className="mr-20 flex-column flex-grow p-5">
       <Title as={`h1`}>Meškania / vytváranie meškaní</Title>
-      <div className="map">
+      <div className="mapContainer mt-5">
         <Heatmap data={data.features} />      
       </div>
       <TrafficIntervalForm onChange={trafficIntervalFormChange} />

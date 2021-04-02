@@ -94,7 +94,7 @@ export const TrafficIntervalForm = ({ onChange }) => {
                 style={{display:'none'}}
               />
               
-            <Label as={`label`} for={i}>
+            <Label as={`label`} htmlFor={i}>
      
               <VDivider/>
               {label}

@@ -13,6 +13,7 @@ const getLegend = (data) => {
     if (objName === "TimeOnStopsByCurrentBuss") {
        result =  TimeOnStopsByCurrentBuss(values)
        result = result.output
+       console.log(result)
        return result
     }
   }
