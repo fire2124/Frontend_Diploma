@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
 const SideText = styled.div`
@@ -13,7 +13,7 @@ const SideText = styled.div`
 `;
 
 export const TrafficForm = ({ onChange }) => {
-  const { register, control, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   return (
     <form onSubmit={handleSubmit(onChange)}>

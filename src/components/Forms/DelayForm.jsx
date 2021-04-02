@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const SwitchText = styled.text`
   font-family: Baloo 2;

@@ -56,7 +56,7 @@ export const OnStopIntervalForm = ({ onChange }) => {
   });
   return (
     <form onChange={() => onChange(getValues())} className="pt-5">
-      <IntervalFormFields register={register}/>
+      <IntervalFormFields register={register} />
     </form>
   );
 };

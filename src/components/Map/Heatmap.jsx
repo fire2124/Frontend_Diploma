@@ -39,7 +39,6 @@ const Heatmap = ({ data }) => {
     L.heatLayer(points, { radius: 25 }).addTo(map);
   }, [finalData, position]);
 
-  //TODO: ak je layer ako sa da posuvat ? -> layer prekryje mapu 
   return (
     <div
       id="map"

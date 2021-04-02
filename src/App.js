@@ -4,21 +4,20 @@ import News from "./pages/News";
 import Delays from "./pages/Delays";
 import TrafficRestrictions from "./pages/Traffic_restrictions";
 import OccupancyOfStops from "./pages/Occupancy_of_Stops";
-import PredictionsOfDelays from "./pages/Predictions_of_Delays";
-import Statistics from "./pages/Statistics";
+// import PredictionsOfDelays from "./pages/Predictions_of_Delays";
+// import Statistics from "./pages/Statistics";
 import NavBar from "./components/nav/Navbar";
 import "./App.css";
 import "./assets/add.css";
 import "./assets/main.css";
 import { GlobalStyle } from "./GlobalStyles";
-import  { firebaseInitialze }  from "./services/firebase";
-import  {sentry}  from "./services/sentry";
+// import  { firebaseInitialze }  from "./services/firebase";
+// import  {sentry}  from "./services/sentry";
 import styled from "styled-components";
 
 //firebaseInitialze()
 //sentry();
 
-//Todo: navbar change of pages
 
 const Container = styled.div`
   align-items: center;

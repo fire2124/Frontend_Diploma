@@ -1,6 +1,6 @@
-import React, {useEffect} from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useForm, useWatch } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
 const Label = styled.div`
