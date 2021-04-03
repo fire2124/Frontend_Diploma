@@ -6,6 +6,7 @@ import { NewsForm } from "../components/forms/NewsForm";
 import { Card } from "../components/Card";
 import { useInterval } from "../services/useInterval"
 import { Title } from "../components/Title"
+import NewsLegend from "../components/NewsLegend";
 
 
 const initState = {
@@ -44,6 +45,7 @@ const News = () => {
       <Card className="mr-20 flex-column flex-grow p-5">
         <Title as={`h1`}>Aktuálne dopravné informácie</Title>
         <MyMap data={state} />
+        <NewsLegend/>
       </Card>
     </Scafolding>
   );

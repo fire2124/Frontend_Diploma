@@ -19,18 +19,18 @@ const TimeOnStopsByCurrentBuss = (values) => {
   let y = [];
   let z = [];
   let output = [];
-  let array = [],
-    array2 = [];
+
   if (values !== undefined) {
     values.map((e) => {
+      // pre vsetky zisti den, cas, zastavku
       if (e.properties.Current_Stop !== undefined) {
         let day = new Date(e.properties.Time);
-        x.push(getTime(day));
-        y.push(e.properties.seconds);
-        z.push(e.properties.Current_Stop);
+        x.push(getTime(day)); // den
+        y.push(e.properties.seconds); // cas
+        z.push(e.properties.Current_Stop); // zastavka
       }
     });
-    //Filter
+    //Filter pre jedinecne zastavky
     let filteredZ = z.reduce((acc, current) => {
       const x = acc.find((item) => item === current);
       if (!x) {
@@ -41,27 +41,54 @@ const TimeOnStopsByCurrentBuss = (values) => {
     }, []);
 
     filteredZ.map((e) => {
+      // k jedinecnym zastavkam pridaj farbu a borderColor pre legendu
       let color = getRandomColor(0.8);
       let borderColor = getRandomColor(0.5);
       output.push({ stop: e, color: color, borderColor: borderColor });
     });
   }
   let print = [];
+  let lenght = 0;
   z.map((e) => {
-    output.map((x, i) => {
-      if (e === x.stop) {
-        array.push(x.color);
-        array2.push(x.borderColor);
-        print.push({ stop: e, color: x.color, borderColor: x.borderColor });
+    // pre vsetky zastavky pridaj farby, a suradnice a vypis to do printu
+    output.map((q, i) => {
+      if (e === q.stop) {
+        print.push({
+          stop: e,
+          color: q.color,
+          borderColor: q.borderColor,
+          x: x[lenght],
+          y: y[lenght],
+        });
       }
     });
-  });
-  
-  const stats = output.map(({ stop, borderColor, color }) => {
-    return [``, stop, borderColor, color];
+    lenght = lenght + 1;
   });
 
-  return { x, y, array,array2, stats, output };
+  //Filter z printu do legendy
+  let filteredOutput = print.reduce((acc, current) => {
+    const x = acc.find((item) => item.stop === current.stop);
+    if (!x) {
+      return acc.concat([current]);
+    } else {
+      return acc;
+    }
+  }, []);
+
+  let plotX = [];
+  let plotY = [];
+  let plotColor = [];
+  let plotBorderColor = [];
+
+  print.map((e) => {
+    // z printu daj vsetko do [] pre plot
+    plotX.push(e.x);
+    plotY.push(e.y);
+    plotColor.push(e.color);
+    plotBorderColor.push(e.borderColor);
+  });
+
+  return { print, filteredOutput, plotX, plotY, plotColor, plotBorderColor };
 };
 
 export { TimeOnStopsByCurrentBuss, isOnStop };

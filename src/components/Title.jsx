@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Title = styled.div`
     font-family: Baloo 2;
     font-style: normal;
@@ -9,3 +10,4 @@ export const Title = styled.div`
     color: #7e7d7d;
     white-space: nowrap;
 `;
+

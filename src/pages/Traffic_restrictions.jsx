@@ -7,6 +7,7 @@ import { TrafficIntervalForm } from "../components/forms/TrafficIntervalForm";
 import styled from "styled-components";
 import { Scafolding } from "../components/Scafolding";
 import { Title } from "../components/Title";
+import TrafficLegend from "../components/TrafficLegend";
 
 const Text = styled.p`
   font-family: Baloo 2;
@@ -28,12 +29,15 @@ const Traffic_restrictions = () => {
     <Scafolding
       sidePanelTitle={"Podrobnosti"}
       sidePanelContent={
-        <Text>
-          Vyberte si konkrétne <br />
-          dopravné obmedzenie. <br />
-          Po zakliknutí sa   <br />
-          zobrazia podrobnosti
-        </Text>
+        <div>
+          <Text>
+            Vyberte si konkrétne <br />
+            dopravné obmedzenie. <br />
+            Po zakliknutí sa <br />
+            zobrazia podrobnosti
+          </Text>
+          <TrafficLegend/>
+        </div>
       }
     >
       <Card className="mr-20 flex-column flex-grow p-5">

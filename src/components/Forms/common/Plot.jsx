@@ -22,7 +22,7 @@ export const MyPlot = (data) => {
     
   } else if (objName === "TimeOnStopsByCurrentBuss") {
     let result = TimeOnStopsByCurrentBuss(values);
-    let data = functionData(result.x, result.y, result.array, result.array2, 2);
+    let data = functionData(result.plotX, result.plotY, result.plotColor, result.plotBorderColor, 3);
     barProps.data = data.result;
     barProps.options = data.options;
   }
