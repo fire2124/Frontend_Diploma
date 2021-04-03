@@ -9,7 +9,7 @@ const Text = styled.p`
   font-size: 16px;
   line-height: 25px;
   color: #7e7d7d;
-  margin-left: -50%;
+  margin-left: -40%;
   white-space: initial;
   @media (max-width: 1200px) {
     margin-left: -2rem;

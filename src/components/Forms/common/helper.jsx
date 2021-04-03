@@ -35,12 +35,12 @@ const getDay = (value) => {
   }
 };
 
-const functionData = (x, y, color, borderColor, borderWidth) => {
+const functionData = (label, x, y, color, borderColor, borderWidth) => {
   const result = {
     labels: x,
     datasets: [
       {
-        label: "",
+        label: label,
         data: y,
         backgroundColor: color,
         borderColor: borderColor,
