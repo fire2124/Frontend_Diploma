@@ -65,14 +65,12 @@
   line-height: 25px;
   color: #7e7d7d;
 }
-/* .map {
-  position: absolute;
+.mapContainer {
+  /* position: absolute;*/ 
   border-radius: 8px;
-  width: 914px;
-  height: 605px;
-  left: 438px;
-  top: 207px;
-} */
+  /* width: 914px; */ 
+  height: 54vh;
+} 
 
 input[type="checkbox"] {
   filter: invert(0%) brightness(1) hue-rotate(75deg);
@@ -90,7 +88,6 @@ input[type="radio"] {
 .tSide {
   padding-right: 2rem;
 }
-
 
 
 
