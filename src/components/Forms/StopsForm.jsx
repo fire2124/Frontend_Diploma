@@ -49,13 +49,13 @@ const fields = [
 
 const description1 = (
   <SidePanelTitle className="pb-5">
-    {"Vyberte konkrétnu zastávku a interval"}
+   Vyberte typ zastávky,<br/> konkrétnu zastávku <br/> a interval
   </SidePanelTitle>
 );
 
 const description2 = (
   <SidePanelTitle className="pb-5">
-    {`Vyberte konkrétnu autobusovú linku a interval`}
+   Vyberte typ linky, <br/> konkrétnu autobusovú linku  <br/>a interval
   </SidePanelTitle>
 );
 
@@ -102,8 +102,9 @@ export const StopForm = ({ onChange }) => {
   return (
     <form onChange={() => onChange(getValues())}>
       {
-        // TODO: make switch component
+        // TODO: make switch component 
       }
+      <div className="grid grid-cols-3 mt-2">
       <label>
         <input
           name="select"
@@ -112,9 +113,9 @@ export const StopForm = ({ onChange }) => {
           value="selectStop"
           className="hidden"
         />
-        <SwitchText>Zastávka</SwitchText>
+        <SwitchText>Zastávka{`| ` }</SwitchText>
       </label>
-      {" | "}
+      
       <label>
         <input
           name="select"
@@ -125,8 +126,8 @@ export const StopForm = ({ onChange }) => {
         />
         <SwitchText>Autobusová linka</SwitchText>
       </label>
-
-      <div>
+      </div>
+      <div className="mt-2">
         <Description select={select} />
       </div>
       <div>
